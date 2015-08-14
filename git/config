@@ -1,0 +1,11 @@
+[core]
+	quotepath = false
+	autocrlf = input
+[push]
+	default = simple
+[include]
+	path = shared
+	path = local
+	path = private
+# [init]
+	# templatedir = ~/.git_template

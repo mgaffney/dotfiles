@@ -1,0 +1,5 @@
+[include]
+	path = private.d/user
+	path = private.d/github
+
+# vim: set filetype=gitconfig : 

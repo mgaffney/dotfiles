@@ -1,0 +1,4 @@
+[core]
+	editor = /usr/local/bin/mvim -f
+
+# vim: set filetype=gitconfig : 

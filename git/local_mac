@@ -1,0 +1,6 @@
+[include]
+	path = local.d/github_filters
+	path = local.d/web
+	path = local.d/mvim
+
+# vim: set filetype=gitconfig : 
