@@ -41,6 +41,7 @@ die() {
 install_git() {
   local readonly target=~/.config/git
   [[ -e $target ]] && die "$target already exists" 
+  mkdir -p ~/.config
   ln -s "$srcdir/git" $target
 }
 
