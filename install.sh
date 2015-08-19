@@ -42,11 +42,16 @@ install_git() {
   local readonly target=~/.config/git
   [[ -e $target ]] && die "$target already exists" 
   mkdir -p ~/.config
-  ln -s "$srcdir/git" $target
+  ln -nsf "$srcdir/git" $target
+}
+
+install_tmux() {
+  ln -nsf "$srcdir/tmux/tmux.conf" $HOME/.tmux.conf
 }
 
 declare -r srcdir=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+install_tmux
 install_git
 
 exitscript
