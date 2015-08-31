@@ -16,16 +16,16 @@
 	head = 2 reverse
 
 [color "diff"]
-	meta = 11 
-	frag = 8 10
-	func = 2
+	meta = 12 
+	frag = 6
+	func = 14
 	old = 1 
-	new = 6 
+	new = 2 
 	commit = 13
 	whitespace = 7 1
 
 [color "status"]
-	added = 11
+	added = 2
 	changed = 1
 	untracked = 6
 
