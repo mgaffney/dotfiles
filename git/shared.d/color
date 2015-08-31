@@ -1,17 +1,32 @@
 [color]
 	ui = auto
+
 [color "branch"]
-	current = yellow reverse
-	local = yellow
-	remote = green
+	current = 2 reverse
+	local = 2
+	remote = 13
+	upstream = 13 reverse
+	plain = 7
+
+[color "decorate"]
+	branch = 2
+	remoteBranch = 13
+	tag = 7
+	stash = 1 reverse
+	head = 2 reverse
+
 [color "diff"]
-	meta = yellow bold
-	frag = magenta bold
-	old = red bold
-	new = green bold
+	meta = 11 
+	frag = 8 10
+	func = 2
+	old = 1 
+	new = 6 
+	commit = 13
+	whitespace = 7 1
+
 [color "status"]
-	added = yellow
-	changed = green
-	untracked = cyan
+	added = 11
+	changed = 1
+	untracked = 6
 
 # vim: set filetype=gitconfig : 

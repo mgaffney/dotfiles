@@ -9,8 +9,24 @@
 	dc = diff --cached
 	ls = ls-files
 	lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
-	lg = !"git lg1"
+	# lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
+	lg2 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
+	lg = !"git lg7"
+
+	lg3 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(6)%an%C(reset)%C(1)%d%C(reset)' --all
+	lg4 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(10)%an%C(reset) %C(7)·%C(reset) %C(1)%d%C(reset)' --all
+
+	lg5 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1)%d%C(reset)' --all
+	lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
+	lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
+	lg71 = log --graph --abbrev-commit --decorate --date=relative --pretty=tformat:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
+	lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %d%C(reset)' --all
+	lg9 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset)  %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)%n''          %C(12)%s%C(reset)' --all
+
+	# lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
+
+	# lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14 0)·%C(reset) %C(10)%ar%C(reset) %C(14 0)·%C(reset) %C(12)%s%C(reset) %C(14 0)·%C(reset) %C(10)%an%C(reset) %C(14 0)·%C(reset) %C(1)%d%C(reset)' --all
+	# lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(8 0)·%C(reset) %C(10)%ar%C(reset) %C(8 0)·%C(reset) %C(12)%s%C(reset) %C(8 0)·%C(reset) %C(10)%an%C(reset) %C(8 0)·%C(reset) %C(1)%d%C(reset)' --all
 	; lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
 	# lol = log --graph --decorate --pretty=oneline --abbrev-commit --date=short
 	# lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=short
