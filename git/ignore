@@ -35,6 +35,8 @@ tags-ja
 *.iml
 *.iws
 /scrap*
+scraps/
+scrap/
 *.un~
 target/
 .vagrant/
