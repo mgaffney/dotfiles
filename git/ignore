@@ -28,7 +28,7 @@ Temporary Items
 
 *.xcuserdatad
 project.xcworkspace
-*.swp
+*.sw?
 tags
 tags-ja
 .idea
