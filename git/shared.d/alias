@@ -75,4 +75,9 @@
 	ign = ls-files -o -i --exclude-standard
 	ctags = !.git/hooks/ctags
 
+	# Fetch a pull request from bitbucket
+	#   example: git prstash origin 3 dest-branch
+	#   checks out the 3rd pull request onto dest-branch
+	prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; } ; f"
+
 # vim: set filetype=gitconfig : 
