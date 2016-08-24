@@ -11,3 +11,11 @@
 	# templatedir = ~/.git_template
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[rebase]
+	autosquash = true
+[branch]
+	autosetuprebase = always
+[pull]
+	rebase = true
+[rerere]
+	enabled = true
