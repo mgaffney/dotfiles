@@ -19,3 +19,7 @@
 	rebase = true
 [rerere]
 	enabled = true
+[user]
+	signingkey = A1193A56
+[commit]
+	gpgsign = true
