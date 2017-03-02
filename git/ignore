@@ -46,3 +46,7 @@ logs/
 Session.vim
 .projections.json
 *.scrap
+
+# Temp directories
+tmp/
+temp/
