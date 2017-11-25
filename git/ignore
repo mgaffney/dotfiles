@@ -50,3 +50,6 @@ Session.vim
 # Temp directories
 tmp/
 temp/
+
+# Visual Studio
+.vscode/
