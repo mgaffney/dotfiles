@@ -53,3 +53,6 @@ temp/
 
 # Visual Studio
 .vscode/
+
+# TODO files
+TODO*
