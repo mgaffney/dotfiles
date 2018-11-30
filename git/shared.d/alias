@@ -86,6 +86,9 @@
 	bsum = "!git diff --compact-summary $(git merge-base --fork-point master)"
 	# Branch files - list the files changed on the branch
 	bfiles = "!git diff --name-only --relative $(git merge-base --fork-point master)"
+	# Branch squash 
+	bsquash = "!git rebase -i $(git merge-base --fork-point master)"
+
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 	# ctags = !.git/hooks/ctags
 
