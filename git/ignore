@@ -57,7 +57,9 @@ temp/
 # TODO files
 TODO*
 
+# direnv
 .envrc
+.direnv/
 
 # python
 .venv/
