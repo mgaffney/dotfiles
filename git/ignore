@@ -28,6 +28,7 @@ project.xcworkspace
 *.sw?
 tags
 tags-ja
+.tags*
 .idea
 *.iml
 *.iws
