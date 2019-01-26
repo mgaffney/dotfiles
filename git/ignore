@@ -56,3 +56,9 @@ temp/
 
 # TODO files
 TODO*
+
+.envrc
+
+# python
+.venv/
+venv/
