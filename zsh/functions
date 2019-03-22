@@ -1,0 +1,91 @@
+# vim: set filetype=sh:
+
+# function tj {
+#   tmux attach-session -t `tmux list-sessions | sed -E 's/:.*$//' | selecta`
+# }
+
+# tars and gzips a list of files/directories
+# usage: tgz archive dir1 dir2...
+# creates archive.tgz
+# (also see `extract` in oh-my-zsh plugins)
+function tgz() {
+	archive=${1}.tar.gz
+	if [ -n "$2" ] ; then
+		shift
+	fi
+	# tar cf - $@ | gzip -c > ${archive}
+	tar czf ${archive} $@
+  return 0
+}
+
+function new-tmux-from-dir-name() {
+  tmux new-session -As $(basename $PWD)
+  return 0
+}
+
+function g() {
+  if [[ $# > 0 ]]; then
+    git $@
+  else
+    git status -sb
+  fi
+  return 0
+}
+
+function gocd() {
+  cd $(go list -f '{{.Dir}}' $1)
+  return 0
+}
+
+function git-delete-branch() {
+  local readonly branch=$1
+  git push origin --delete "${branch}"
+  git branch -d "${branch}"
+  return 0
+}
+
+function font-search() {
+  local readonly font=$1
+  brew cask search /"${font}"/
+}
+
+function recm() {
+  local readonly fn=$1
+  if [[ -z "${fn}" ]]; then
+    echo "missing meeting name"
+    return 1
+  fi
+  local dt=$(date +%Y%m%d)
+  local outdir=/Users/mike/Documents/ZeroFox/notes/daily-notes/voice
+  sox -q -d "${outdir}/${fn}-${dt}.mp3"
+}
+
+
+function recf() {
+  local dt=$(date +%Y%m%d-%H%M)
+  local outdir=/Users/mike/Documents/ZeroFox/notes/daily-notes/q1-offsite/voice
+  sox -q -d "${outdir}/q1-offsite-${dt}.mp3"
+}
+
+# function gist() {
+#   # if there's nothing piped on STDIN
+#   if [[ -t 0 ]]; then
+#     # and there's no arguments...
+#     if ((! $# )); then
+#       # take what's on the clipboard and paste it in a new gist
+#       command gist -Pcop -f paste.txt
+#     else
+#       # create a gist based on the arguments give
+#       command gist -cop $@
+#     fi
+#   else
+#     # otherwise, create a gist, with arguments, but use the
+#     # content from STDIN
+#     command gist -cop $@ < /dev/stdin
+#   fi
+# }
+
+# fh - repeat history
+fh() {
+  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+}

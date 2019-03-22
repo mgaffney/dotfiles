@@ -1,0 +1,149 @@
+alias dircolors='gdircolors'
+# alias ls='gls --color=auto'
+alias l='ls -lah'
+alias la='l'
+alias lsdot='ls -AFd .*'
+alias ladot='la -AFd .*'
+# alias ls='ls -FA'
+# alias la='ls -lah'
+
+#sort files by time modified with most recent at the end
+alias lt='ls -lahtr'
+
+#sort files by size from smallest to largest
+alias lz='la -Sr'
+
+#display all extended info too
+alias lA='la -O@'
+
+#display .dot files in tree
+# alias tree='tree -a'
+alias md='mkdir'
+alias vi='vim'
+
+# use less not more
+alias more='less'
+alias m='less'
+
+# ignore vendor and website directories in tree command
+alias htree='tree -I "vendor|website|ui" --dirsfirst'
+alias gtree='htree --prune -P "*.go"'
+# alias ptree='tree --prune -P "*.py"'
+alias ptree='tree -I "*.pyc" --prune'
+
+#show user name instead of UID
+# alias ps='ps -e -O user'
+
+alias psg='ps -Ao pid,user,command | grep -v grep | grep'
+
+#see a mapping of open connections to processes
+alias mnetstat='sudo lsof -i -P'
+alias mnetstat-listen='sudo lsof -iTCP -sTCP:LISTEN -P -n'
+
+alias cdcopy='pwd | pbcopy'
+alias cdpaste='cd `pbpaste`'
+
+#find sql files but ignore test files and files under .svn directory
+alias findsql="find . -not \( -regex '.*/test/.*' -o -regex '.*/test' -o -regex '.*/.svn/.*' -o -regex '.*/.svn' \) -name '*.sql'"
+
+#alias git=hub
+
+alias hgrep='history | grep'
+alias extrabrew='ls `brew --repository`/Library/Contributions/cmd'
+# alias burp='brew update && brew outdated && brew upgrade'
+alias burp='brew update; brew outdated; brew upgrade;'
+
+# alias 3lmdev='pythonbrew venv use 3lm-master'
+
+alias mvims='mvim --remote-tab-silent'
+alias mvimc='mvim -S Session.vim'
+alias vims='vim --remote-tab-silent'
+alias vimc='vim -S Session.vim'
+alias nvimc='nvim -S Session.vim'
+
+alias matrix='cat /dev/urandom | hexdump -C | grep "ca fe"'
+
+# Rename/move a collection of files
+# ex: mmv *.log *.txt
+alias mmv='noglob zmv -W'
+
+# Add readline support to sqlplus
+alias sql='rlwrap -i -pyellow sqlplus'
+
+# Google Cloud
+alias gci='gcloud compute instances'
+alias gcd='gcloud compute disks'
+alias gcs='gcloud compute ssh'
+
+# boot2docker
+# alias b2di='eval "$(boot2docker shellinit)"'
+
+# tmux
+alias tls='tmux ls'
+alias tlsm="tmux ls -F '#{session_name}: #{session_windows} windows #{window_panes} panes'"
+alias td='tmux detach'
+alias tat="new-tmux-from-dir-name"
+# kill session by name
+alias tk='tmux kill-session -t'
+alias killmux='killall -10 tmux'
+
+# youtube-dl
+alias yt='youtube-dl --recode-video mp4'
+alias ytq='youtube-dl -q --recode-video mp4'
+
+# atlas
+alias atlas-upload='atlas-upload-cli'
+
+# AWS Creds
+alias gaws='env | grep AWS | sort'
+alias gpack='env | grep PACKER | sort'
+alias gtf='env | grep TF | sort'
+# alias awsprod='source $HOME/.zsh/cred-aws-ijetprod'
+# alias awsdev='source $HOME/.zsh/cred-aws-ijetdev'
+# alias awseng='source $HOME/.zsh/cred-aws-ijeteng'
+# alias awscorp='source $HOME/.zsh/cred-aws-ijetcorp'
+alias awspersonal='source $HOME/.zsh/cred-aws-personal'
+alias awszf='source $HOME/.zsh/cred-aws-zerofox'
+alias awstmp='source $HOME/.zsh/cred-aws-tmp'
+alias awsclear='source $HOME/.zsh/cred-aws-clear'
+
+# Github Creds
+alias gh='source $HOME/.zsh/cred-github'
+alias ghclear='source $HOME/.zsh/cred-github-clear'
+
+# Drone Creds
+alias gdrone='source $HOME/.zsh/cred-drone'
+
+# Terraform state flips
+alias gtfu='git add terraform.tfstate && git commit -m "Terraform up"'
+alias gtfd='git add terraform.tfstate && git commit -m "Terraform down"'
+alias tfup='terraform get && terraform plan -out=terraform.plan && terraform apply terraform.plan'
+alias tfdn='terraform destroy -force'
+
+# ripgrep
+# alias rg='rg -i'
+
+# ssh
+alias ssh="TERM=xterm-256color ssh"
+alias sshup='ssh-add -K /Users/mike/.ssh/id_rsa /Users/mike/.ssh/id_ed25519'
+
+# fonts
+alias font-install='brew cask install'
+# alias font-search -- see functions file
+
+# try 'airport -s'
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/airport
+
+alias today='date +%Y%m%d'
+
+alias timer='recm'
+
+alias chrome='open -a "Google Chrome"'
+
+alias untgz='extract'
+
+# find running VIMs
+alias fvim="lsof -c '/vim/i' | grep cwd"
+
+# nomad
+alias nomad-stag='source $HOME/.zsh/nomad-stag'
