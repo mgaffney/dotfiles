@@ -41,7 +41,7 @@ ZSH_THEME="myagnoster"
 # The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # HIST_STAMPS="mm/dd/yyyy"
 
-DEFAULT_USER="mike"
+# DEFAULT_USER="mike"
 
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$DOTS/oh-my-zsh
