@@ -56,14 +56,14 @@ function recm() {
     return 1
   fi
   local dt=$(date +%Y%m%d)
-  local outdir=/Users/mike/Documents/ZeroFox/notes/daily-notes/voice
+  local outdir=$HOME/Documents/ZeroFox/notes/daily-notes/voice
   sox -q -d "${outdir}/${fn}-${dt}.mp3"
 }
 
 
 function recf() {
   local dt=$(date +%Y%m%d-%H%M)
-  local outdir=/Users/mike/Documents/ZeroFox/notes/daily-notes/q1-offsite/voice
+  local outdir=$HOME/Documents/ZeroFox/notes/daily-notes/q1-offsite/voice
   sox -q -d "${outdir}/q1-offsite-${dt}.mp3"
 }
 

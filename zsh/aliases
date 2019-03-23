@@ -125,7 +125,7 @@ alias tfdn='terraform destroy -force'
 
 # ssh
 alias ssh="TERM=xterm-256color ssh"
-alias sshup='ssh-add -K /Users/mike/.ssh/id_rsa /Users/mike/.ssh/id_ed25519'
+alias sshup='ssh-add -K $HOME/.ssh/id_rsa $HOME/.ssh/id_ed25519'
 
 # fonts
 alias font-install='brew cask install'
