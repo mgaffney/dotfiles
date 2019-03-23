@@ -59,6 +59,8 @@ function install() {
 
 function install_tmux() {
   install "${SCRIPTDIR}/tmux/tmux.conf" "${HOME}/.tmux.conf"
+  tic -x "${SCRIPTDIR}/tmux/xterm-256color-italic.terminfo"
+  tic -x "${SCRIPTDIR}/tmux/tmux-256color.terminfo"
 }
 
 function install_git() {
