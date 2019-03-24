@@ -75,12 +75,20 @@ function install_zsh() {
   install "${SCRIPTDIR}/zsh/zshrc" "${HOME}/.zshrc"
 }
 
+function install_gpg {
+  local -r target="${HOME}/.gnupg"
+  mkdir -p "${target}"
+  install "${SCRIPTDIR}/gnupg/gpg.conf" "${target}/gpg.conf"
+  install "${SCRIPTDIR}/gnupg/gpg-agent.conf" "${target}/gpg-agent.conf"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
   install_git || return
   install_alacritty || return
   install_zsh || return
+  install_gpg || return
 }
 
 main "$@"
