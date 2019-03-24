@@ -80,6 +80,8 @@ function install_gpg {
   mkdir -p "${target}"
   install "${SCRIPTDIR}/gnupg/gpg.conf" "${target}/gpg.conf"
   install "${SCRIPTDIR}/gnupg/gpg-agent.conf" "${target}/gpg-agent.conf"
+  keybase pgp export -q 21FE4844A1193A56 | gpg --import
+  keybase pgp export -q 21FE4844A1193A56 --secret | gpg --allow-secret-key-import --import
 }
 
 function main() {
