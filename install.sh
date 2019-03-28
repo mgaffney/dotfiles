@@ -88,7 +88,7 @@ function install_dircolors {
   local -r target="${HOME}/sandbox/dircolors-solarized"
   mkdir -p "${HOME}/sandbox"
   git clone https://github.com/mgaffney/dircolors-solarized.git "${target}" || return
-  install "${target}/dircolors.ansi-universal" "${HOME}/.dir_colors"
+  install "${target}/dircolors.ansi-universal" "${HOME}/.dircolors"
 }
 
 function main() {

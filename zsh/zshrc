@@ -110,7 +110,7 @@ export EDITOR="vim"
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
 source $DOTS/creds/homebrew
-eval `dircolors ~/.dir_colors`
+eval `dircolors ~/.dircolors`
 
 ############################ BEGIN PATH ############################
 
