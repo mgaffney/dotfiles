@@ -103,7 +103,10 @@ bindkey '\e[B' down-line-or-beginning-search
 # export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
-export GOPATH="$HOME/sandbox/go-workspace"
+gopath=(
+	$HOME/sandbox/go/{landing,personal,work}
+)
+export GOPATH=${(j.:.)gopath}
 
 export EDITOR="vim"
 
@@ -116,14 +119,13 @@ eval `dircolors ~/.dircolors`
 
 path=(
 	$HOME/bin
-	$(go env GOPATH)/bin
+	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
 	/usr/local/{bin,sbin}
 	/usr/local/opt/go/libexec/bin
 	/usr/{bin,sbin}
 	/{bin,sbin}
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
-	$path
 )
 
 eval "$(hub alias -s)"
