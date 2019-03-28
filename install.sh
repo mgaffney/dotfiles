@@ -84,6 +84,13 @@ function install_gpg {
   keybase pgp export -q 21FE4844A1193A56 --secret | gpg --allow-secret-key-import --import
 }
 
+function install_dircolors {
+  local -r target="${HOME}/sandbox/dircolors-solarized"
+  mkdir -p "${HOME}/sandbox"
+  git clone https://github.com/mgaffney/dircolors-solarized.git "${target}" || return
+  install "${target}/dircolors.ansi-universal" "${HOME}/.dir_colors"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -91,6 +98,7 @@ function main() {
   install_alacritty || return
   install_zsh || return
   install_gpg || return
+  install_dircolors || return
 }
 
 main "$@"
