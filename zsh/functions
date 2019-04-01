@@ -52,20 +52,15 @@ function font-search() {
 function recm() {
   local readonly fn=$1
   if [[ -z "${fn}" ]]; then
-    echo "missing meeting name"
+    echo "missing note name"
     return 1
   fi
   local dt=$(date +%Y%m%d)
-  local outdir=$HOME/Documents/ZeroFox/notes/daily-notes/voice
+  local outdir=$HOME/Documents/notes/daily-notes/audio
+  mkdir -p "${outdir}"
   sox -q -d "${outdir}/${fn}-${dt}.mp3"
 }
 
-
-function recf() {
-  local dt=$(date +%Y%m%d-%H%M)
-  local outdir=$HOME/Documents/ZeroFox/notes/daily-notes/q1-offsite/voice
-  sox -q -d "${outdir}/q1-offsite-${dt}.mp3"
-}
 
 # function gist() {
 #   # if there's nothing piped on STDIN
