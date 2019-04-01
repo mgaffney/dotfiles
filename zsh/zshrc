@@ -154,5 +154,5 @@ export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.g
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-complete -o nospace -C /usr/local/bin/vault vault
-complete -o nospace -C /usr/local/bin/nomad nomad
+
+complete -o nospace -C /Users/mgaffney/sandbox/go/landing/bin/vault vault
