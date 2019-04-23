@@ -9,23 +9,23 @@
 # creates archive.tgz
 # (also see `extract` in oh-my-zsh plugins)
 function tgz() {
-	archive=${1}.tar.gz
+	local -r archive="$1.tar.gz"
 	if [ -n "$2" ] ; then
 		shift
 	fi
 	# tar cf - $@ | gzip -c > ${archive}
-	tar czf ${archive} $@
+	tar czf "${archive}" "$@"
   return 0
 }
 
 function new-tmux-from-dir-name() {
-  tmux new-session -As $(basename $PWD)
+  tmux new-session -As "$(basename "${PWD}")"
   return 0
 }
 
 function g() {
-  if [[ $# > 0 ]]; then
-    git $@
+  if [[ $# -gt 0 ]]; then
+    git "$@"
   else
     git status -sb
   fi
@@ -33,30 +33,31 @@ function g() {
 }
 
 function gocd() {
-  cd $(go list -f '{{.Dir}}' $1)
+  cd "$(go list -f '{{.Dir}}' "$1")" || return
   return 0
 }
 
 function git-delete-branch() {
-  local readonly branch=$1
+  local -r branch="$1"
   git push origin --delete "${branch}"
   git branch -d "${branch}"
   return 0
 }
 
 function font-search() {
-  local readonly font=$1
+  local -r font="$1"
   brew cask search /"${font}"/
 }
 
 function recm() {
-  local readonly fn=$1
+  local -r fn="$1"
   if [[ -z "${fn}" ]]; then
     echo "missing note name"
     return 1
   fi
-  local dt=$(date +%Y%m%d)
-  local outdir=$HOME/Documents/notes/daily-notes/audio
+  local dt
+  dt=$(date +%Y%m%d)
+  local -r outdir="${HOME}/Documents/notes/daily-notes/audio"
   mkdir -p "${outdir}"
   sox -q -d "${outdir}/${fn}-${dt}.mp3"
 }
@@ -82,5 +83,5 @@ function recm() {
 
 # fh - repeat history
 fh() {
-  print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
+  print -z "$( (history) | fzf +s --tac | sed 's/ *[0-9]* *//')"
 }
