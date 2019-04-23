@@ -85,3 +85,19 @@ function recm() {
 fh() {
   print -z "$( (history) | fzf +s --tac | sed 's/ *[0-9]* *//')"
 }
+
+# Go Modules
+mod() {
+  value="$1"
+
+  if [ -z "$value" ]; then
+    case "${GO111MODULE}" in
+      "on") value="off" ;;
+      "off") value="auto" ;;
+      *) value="on" ;;
+    esac
+  fi
+
+  export GO111MODULE="$value"
+  env | grep GO111MODULE
+}
