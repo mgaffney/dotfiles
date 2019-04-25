@@ -69,3 +69,6 @@ venv/
 
 # terraform
 .terraform/
+
+# gitcommit messages
+*.gitcommit
