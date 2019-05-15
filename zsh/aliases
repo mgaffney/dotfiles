@@ -1,7 +1,9 @@
 alias dircolors='gdircolors'
 # alias ls='gls --color=auto'
-alias l='ls -lah'
+alias l='ls -lahF'
 alias la='l'
+alias ea='exa --long --color-scale --git -a -a -F'
+
 alias lsdot='ls -AFd .*'
 alias ladot='la -AFd .*'
 # alias ls='ls -FA'
@@ -9,12 +11,15 @@ alias ladot='la -AFd .*'
 
 #sort files by time modified with most recent at the end
 alias lt='ls -lahtr'
+alias et='ea --sort=modified'
 
 #sort files by size from smallest to largest
 alias lz='la -Sr'
+alias ez='ea --sort=filesize'
 
 #display all extended info too
-alias lA='la -O@'
+alias lA='/bin/ls -GlahO -@'
+alias eA='ea --extended'
 
 #display .dot files in tree
 # alias tree='tree -a'
