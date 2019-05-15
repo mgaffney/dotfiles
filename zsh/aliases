@@ -30,8 +30,12 @@ alias vi='vim'
 alias more='less'
 alias m='less'
 
+alias etree='exa --tree --long --color-scale --git -F'
+
 # ignore vendor and website directories in tree command
 alias htree='tree -I "vendor|website|ui" --dirsfirst'
+alias ehtree='etree -I "vendor|website|ui" --group-directories-first --sort=name'
+
 alias gtree='htree --prune -P "*.go"'
 # alias ptree='tree --prune -P "*.py"'
 alias ptree='tree -I "*.pyc" --prune'
