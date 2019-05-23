@@ -1,8 +1,9 @@
 alias dircolors='gdircolors'
 # alias ls='gls --color=auto'
 alias l='ls -lahF'
-alias la='l'
+# alias la='l'
 alias ea='exa --long --color-scale --git -a -a -F'
+alias la='ea'
 
 alias lsdot='ls -AFd .*'
 alias ladot='la -AFd .*'
