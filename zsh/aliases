@@ -65,10 +65,14 @@ alias burp='brew update; brew outdated; brew upgrade;'
 
 # alias 3lmdev='pythonbrew venv use 3lm-master'
 
+# start using neovim
+alias ovim='/usr/local/bin/vim'
+alias vim='nvim'
+
 alias mvims='mvim --remote-tab-silent'
 alias mvimc='mvim -S Session.vim'
 alias vims='vim --remote-tab-silent'
-alias vimc='vim -S Session.vim'
+alias vimc='nvim -S Session.vim'
 alias nvimc='nvim -S Session.vim'
 
 alias matrix='cat /dev/urandom | hexdump -C | grep "ca fe"'
