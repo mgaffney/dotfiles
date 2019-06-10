@@ -91,6 +91,10 @@ function install_dircolors {
   install "${target}/dircolors.ansi-universal" "${HOME}/.dircolors"
 }
 
+function install_neovim() {
+  install "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -99,6 +103,7 @@ function main() {
   install_zsh || return
   install_gpg || return
   install_dircolors || return
+  install_neovim || return
 }
 
 main "$@"
