@@ -5,7 +5,7 @@
       "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
       "filetypes": ["go"]
     },
-		"bash": {
+    "bash": {
       "command": "bash-language-server",
       "args": ["start"],
       "filetypes": ["sh"],
