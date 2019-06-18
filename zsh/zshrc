@@ -154,6 +154,8 @@ autoload -U +X bashcompinit && bashcompinit
 # use ripgrep with fzf
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+# Keep previous versions of homebrew formulas around
+export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # Use vim as a MANPAGER
 # export MANPAGER="vim -c MANPAGER -"
