@@ -60,8 +60,8 @@ alias findsql="find . -not \( -regex '.*/test/.*' -o -regex '.*/test' -o -regex 
 
 alias hgrep='history | grep'
 alias extrabrew='ls `brew --repository`/Library/Contributions/cmd'
-alias burp='brew update; brew outdated; brew upgrade; brew caskoutdated;'
-alias bcurp='brew update; brew caskoutdated; brew cask upgrade;'
+alias burp='brew update; brew outdated; brew upgrade; brew cask outdated;'
+alias bcurp='brew update; brew cask outdated; brew cask upgrade;'
 
 # alias 3lmdev='pythonbrew venv use 3lm-master'
 
