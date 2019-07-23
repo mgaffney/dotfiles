@@ -135,8 +135,7 @@ alias tfup='terraform get && terraform plan -out=terraform.plan && terraform app
 alias tfdn='terraform destroy -force'
 
 # ripgrep
-# alias rg='rg -i'
-
+alias rgv="rg -g '!vendor' -g '!website'"
 # ssh
 alias ssh="TERM=xterm-256color ssh"
 alias sshup='ssh-add -K $HOME/.ssh/id_rsa $HOME/.ssh/id_ed25519'
