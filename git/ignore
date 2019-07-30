@@ -35,6 +35,8 @@ tags-ja
 /scrap*
 scraps/
 scrap/
+_scraps/
+_scrap/
 *scrap.json
 *.un~
 target/
