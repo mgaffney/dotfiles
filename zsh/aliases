@@ -74,6 +74,7 @@ alias mvimc='mvim -S Session.vim'
 alias vims='vim --remote-tab-silent'
 alias vimc='nvim -S Session.vim'
 alias nvimc='nvim -S Session.vim'
+alias ovimc='ovim -S Session.vim'
 
 alias matrix='cat /dev/urandom | hexdump -C | grep "ca fe"'
 
