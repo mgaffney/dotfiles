@@ -88,6 +88,8 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	remotes = remote -v
 	# List all branches
 	branches = branch -a
+	# List all tags - reverse sort
+	tags = tag --sort=-version:refname
 	# Show all git aliases:
 	aliases = "!git config -l | grep alias | cut -c 7-"
 
