@@ -23,5 +23,7 @@
 	signingkey = A1193A56
 [commit]
 	gpgsign = true
+[diff]
+	colorMoved = zebra
 
 # vim: set filetype=gitconfig :
