@@ -25,5 +25,7 @@
 	gpgsign = true
 [diff]
 	colorMoved = zebra
+[fetch]
+	prune = true
 
 # vim: set filetype=gitconfig :
