@@ -23,3 +23,5 @@
 	signingkey = A1193A56
 [commit]
 	gpgsign = true
+
+# vim: set filetype=gitconfig :

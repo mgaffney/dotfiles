@@ -16,11 +16,11 @@
 	head = 2 reverse
 
 [color "diff"]
-	meta = 12 
+	meta = 12
 	frag = 6
 	func = 14
-	old = 1 
-	new = 2 
+	old = 1
+	new = 2
 	commit = 13
 	whitespace = 7 1
 
@@ -29,4 +29,4 @@
 	changed = 1
 	untracked = 6
 
-# vim: set filetype=gitconfig : 
+# vim: set filetype=gitconfig :

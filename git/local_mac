@@ -3,4 +3,4 @@
 	path = local.d/web
 	path = local.d/vim
 
-# vim: set filetype=gitconfig : 
+# vim: set filetype=gitconfig :

@@ -10,4 +10,4 @@
 	smudge = git lfs smudge %f
 	required = true
 
-# vim: set filetype=gitconfig : 
+# vim: set filetype=gitconfig :
