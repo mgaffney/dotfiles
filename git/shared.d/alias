@@ -23,6 +23,7 @@
 	# lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 	lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 
+
 	lg7b = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)'
 
 lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
@@ -88,6 +89,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	remotes = remote -v
 	# List all branches
 	branches = branch -a
+	branches2 = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(refname:short)\" refs/remotes
 	# List all tags - reverse sort
 	tags = tag --sort=-version:refname
 	# Show all git aliases:
