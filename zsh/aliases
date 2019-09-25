@@ -113,21 +113,13 @@ alias atlas-upload='atlas-upload-cli'
 alias gaws='env | grep AWS | sort'
 alias gpack='env | grep PACKER | sort'
 alias gtf='env | grep TF | sort'
-# alias awsprod='source $HOME/.zsh/cred-aws-ijetprod'
-# alias awsdev='source $HOME/.zsh/cred-aws-ijetdev'
-# alias awseng='source $HOME/.zsh/cred-aws-ijeteng'
-# alias awscorp='source $HOME/.zsh/cred-aws-ijetcorp'
 alias awspersonal='source $HOME/.zsh/cred-aws-personal'
-alias awszf='source $HOME/.zsh/cred-aws-zerofox'
 alias awstmp='source $HOME/.zsh/cred-aws-tmp'
 alias awsclear='source $HOME/.zsh/cred-aws-clear'
 
 # Github Creds
 alias gh='source $HOME/.zsh/cred-github'
 alias ghclear='source $HOME/.zsh/cred-github-clear'
-
-# Drone Creds
-alias gdrone='source $HOME/.zsh/cred-drone'
 
 # Terraform state flips
 alias gtfu='git add terraform.tfstate && git commit -m "Terraform up"'
@@ -159,5 +151,3 @@ alias untgz='extract'
 # find running VIMs
 alias fvim="lsof -c '/vim/i' | grep cwd"
 
-# nomad
-alias nomad-stag='source $HOME/.zsh/nomad-stag'
