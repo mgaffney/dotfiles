@@ -95,6 +95,13 @@ function install_neovim() {
   install "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 }
 
+function install_creds() {
+  local -r target="${HOME}/.creds"
+  mkdir -p "${target}"
+  chmod 700 "${target}"
+  cp -a "${SCRIPTDIR}/creds/" "${target}"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -104,6 +111,7 @@ function main() {
   install_gpg || return
   install_dircolors || return
   install_neovim || return
+  install_creds || return
 }
 
 main "$@"

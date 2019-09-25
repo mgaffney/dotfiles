@@ -112,7 +112,7 @@ export EDITOR="vim"
 
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
-source $DOTS/creds/homebrew
+source $HOME/.creds/homebrew
 eval `dircolors ~/.dircolors`
 
 ############################ BEGIN PATH ############################

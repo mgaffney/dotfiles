@@ -109,17 +109,19 @@ alias ytq='youtube-dl -q --recode-video mp4'
 # atlas
 alias atlas-upload='atlas-upload-cli'
 
-# AWS Creds
 alias gaws='env | grep AWS | sort'
 alias gpack='env | grep PACKER | sort'
 alias gtf='env | grep TF | sort'
-alias awspersonal='source $HOME/.zsh/cred-aws-personal'
-alias awstmp='source $HOME/.zsh/cred-aws-tmp'
-alias awsclear='source $HOME/.zsh/cred-aws-clear'
+
+# AWS Creds
+alias awspersonal='source $HOME/.creds/aws-personal'
+alias awswork='source $HOME/.creds/aws-work'
+alias awstmp='source $HOME/.creds/aws-tmp'
+alias awsclear='source $HOME/.creds/aws-clear'
 
 # Github Creds
-alias gh='source $HOME/.zsh/cred-github'
-alias ghclear='source $HOME/.zsh/cred-github-clear'
+alias gh='source $HOME/.creds/github'
+alias ghclear='source $HOME/.creds/github-clear'
 
 # Terraform state flips
 alias gtfu='git add terraform.tfstate && git commit -m "Terraform up"'
