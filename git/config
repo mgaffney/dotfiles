@@ -25,6 +25,7 @@
 	gpgsign = true
 [diff]
 	colorMoved = zebra
+	noprefix = true
 [fetch]
 	prune = true
 
