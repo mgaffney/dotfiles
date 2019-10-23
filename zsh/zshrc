@@ -1,3 +1,7 @@
+if [[ "$ZPROF" = true ]]; then
+  zmodload zsh/zprof
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -164,3 +168,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 
 complete -o nospace -C /Users/mgaffney/sandbox/go/landing/bin/vault vault
+
+if [[ "$ZPROF" = true ]]; then
+  zprof
+fi
