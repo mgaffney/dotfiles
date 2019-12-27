@@ -56,7 +56,7 @@ alias cdpaste='cd `pbpaste`'
 #find sql files but ignore test files and files under .svn directory
 alias findsql="find . -not \( -regex '.*/test/.*' -o -regex '.*/test' -o -regex '.*/.svn/.*' -o -regex '.*/.svn' \) -name '*.sql'"
 
-#alias git=hub
+alias git=hub
 
 alias hgrep='history | grep'
 alias extrabrew='ls `brew --repository`/Library/Contributions/cmd'

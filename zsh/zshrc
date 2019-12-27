@@ -138,7 +138,7 @@ path=(
 # export LDFLAGS="-L/usr/local/opt/protobuf@3.6/lib"
 # export CPPFLAGS="-I/usr/local/opt/protobuf@3.6/include"
 
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
 
 
 ############################ END PATH ############################

@@ -87,11 +87,11 @@ prompt_context() {
 # Git: branch/detached head, dirty status
 prompt_git() {
   local ref dirty mode repo_path
-  repo_path=$(git rev-parse --git-dir 2>/dev/null)
+  repo_path=$(command git rev-parse --git-dir 2>/dev/null)
 
-  if $(git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
+  if $(command git rev-parse --is-inside-work-tree >/dev/null 2>&1); then
     dirty=$(parse_git_dirty)
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
+    ref=$(command git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
       prompt_segment yellow black
     else
@@ -254,7 +254,7 @@ aws_acct_prompt() {
 		# rprompt_start white black
 		# rprompt_segment white black "$AWS_ACCT "
 	else
-		echo ""
+		echo ''
 	fi
 }
 
