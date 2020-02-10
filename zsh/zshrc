@@ -130,6 +130,7 @@ path=(
 	/usr/local/opt/go/libexec/bin
 	/usr/{bin,sbin}
 	/{bin,sbin}
+  /usr/local/opt/qt/bin
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
 )
 
