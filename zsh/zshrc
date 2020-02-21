@@ -165,8 +165,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Use vim as a MANPAGER
 # export MANPAGER="vim -c MANPAGER -"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
+[ -f $DOTS/zsh/privaterc ] && source $DOTS/zsh/privaterc
 
 complete -o nospace -C /Users/mgaffney/sandbox/go/landing/bin/vault vault
 
