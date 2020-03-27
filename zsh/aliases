@@ -156,3 +156,5 @@ alias untgz='extract'
 # find running VIMs
 alias fvim="lsof -c '/vim/i' | grep cwd"
 
+# turn bluetooth off, wait a sec, then turn it back on
+alias fixbluetooth="blueutil -p 0 && sleep 1 && blueutil -p 1"
