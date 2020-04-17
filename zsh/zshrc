@@ -125,7 +125,6 @@ path=(
 	$HOME/bin
 	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
-	/usr/local/opt/protobuf@3.6/bin
 	/usr/local/{bin,sbin}
 	/usr/local/opt/go/libexec/bin
 	/usr/{bin,sbin}
