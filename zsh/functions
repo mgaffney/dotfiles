@@ -119,3 +119,15 @@ profzsh() {
 timevim() {
   for i in $(seq 1 10); do /usr/bin/time vim +qa; done
 }
+
+# rars a directory with 50MB splits. Excludes Mac specific files.
+#
+# usage: rardir bazdir
+# creates bazdir.rar
+function rardir() {
+	local -r dir="$1"
+	local -r archive="$1.rar"
+
+  rar a -v50M -r "${archive}" -x "__MACOSX/*" "${dir}"
+  return 0
+}
