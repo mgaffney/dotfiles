@@ -54,7 +54,7 @@ ZSH_CUSTOM=$DOTS/oh-my-zsh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew autojump extract tmux docker)
+plugins=(brew autojump extract tmux docker fzf)
 
 typeset -gU fpath path
 
