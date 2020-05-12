@@ -75,6 +75,11 @@ function install_zsh() {
   install "${SCRIPTDIR}/zsh/zshrc" "${HOME}/.zshrc"
 }
 
+function install_psql() {
+  mkdir -p "${HOME}/.psql"
+  install "${SCRIPTDIR}/psql/psqlrc" "${HOME}/.psqlrc"
+}
+
 function install_gpg {
   local -r target="${HOME}/.gnupg"
   mkdir -p "${target}"
@@ -109,6 +114,7 @@ function main() {
   install_alacritty || return
   install_zsh || return
   install_gpg || return
+  install_psql || return
   install_dircolors || return
   install_neovim || return
   install_creds || return

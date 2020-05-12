@@ -1,0 +1,166 @@
+-- vim: set filetype=sql:
+
+\set QUIET 1
+
+-- Custom prompt
+-- no color '%n@%M (psql)-%/ %R%# '
+-- color:  %[%033[COLOR_VALUE%]
+--
+-- 1m     -     Change text to hicolour (bold) mode
+-- 4m     -        "    "   "  Underline (doesn't seem to work)
+-- 5m     -        "    "   "  BLINK!!
+-- 8m     -        "    "   "  Hidden (same colour as bg)
+-- 30m    -        "    "   "  Black
+-- 31m    -        "    "   "  Red
+-- 32m    -        "    "   "  Green
+-- 33m    -        "    "   "  Yellow
+-- 34m    -        "    "   "  Blue
+-- 35m    -        "    "   "  Magenta
+-- 36m    -        "    "   "  Cyan
+-- 37m    -        "    "   "  White
+-- 40m    -     Change Background to Black
+-- 41m    -        "       "      "  Red
+-- 42m    -        "       "      "  Green
+-- 43m    -        "       "      "  Yellow
+-- 44m    -        "       "      "  Blue
+-- 45m    -        "       "      "  Magenta
+-- 46m    -        "       "      "  Cyan
+-- 47m    -        "       "      "  White
+-- 7m     -     Change to Black text on a White bg
+-- 0m     -     Turn off all attributes.
+
+-- Solarized
+-- base03   234
+-- base02   235
+-- base01   240
+-- base00   241
+-- base0    244
+-- base1    245
+-- base2    254
+-- base3    230
+-- yellow   136
+-- orange   166
+-- red      160
+-- magenta  125
+-- violet   61
+-- blue     33
+-- cyan     37
+-- green    64
+
+-- \set PROMPT1 '%/%#%x '
+-- \set PROMPT1 '%[%033[1m%]%M/%/%R%[%033[0m%]%# '
+-- \set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
+-- \set PROMPT1 '%M:%> %n@%/%R%#%x '
+-- \set PROMPT1 '%M %n@%/%R%#%x '
+-- \set PROMPT1 '%n%/%R%%x '
+-- \set PROMPT1 '%n%/%R%%x '
+
+-- color:  %[%033[COLOR_VALUE%]
+-- color:  %[\x1b[COLOR_VALUE%]
+-- \set bg '%[\x1b[48;5;'
+-- \set fg '%[\x1b[38;5;'
+-- \set color_end 'm%]'
+
+\set fg_white '%[\x1b[38;5;254m%]'
+
+-- \set black '0;43;54'
+\set black '7;54;66'
+\set bg_black '%[\x1b[48;2;' :black 'm%]'
+\set fg_black '%[\x1b[38;2;' :black 'm%]'
+-- \set bg_black '%[\x1b[48;2;0;43;54m%]'
+-- \set fg_black '%[\x1b[38;2;0;43;54m%]'
+-- \set fg_black '%[\x1b[38;5;234m%]'
+
+\set bg_blue '%[\x1b[48;5;33m%]'
+\set fg_blue '%[\x1b[38;5;33m%]'
+
+\set bg_green '%[\x1b[48;5;64m%]'
+\set fg_green '%[\x1b[38;5;64m%]'
+
+\set bg_yellow '%[\x1b[48;5;136m%]'
+\set fg_yellow '%[\x1b[38;5;136m%]'
+
+\set bg_magenta '%[\x1b[48;5;125m%]'
+\set fg_magenta '%[\x1b[38;5;125m%]'
+
+\set bg_red '%[\x1b[48;5;160m%]'
+\set fg_red '%[\x1b[38;5;160m%]'
+
+\set reset '%[\x1b[0m%]'
+\set arrow ''
+-- \set arrow ''
+-- \set arrow ' '
+-- \set arrow ' '
+-- \set arrow ' '
+-- \set arrow ' '
+
+-- clear the prompt
+-- \set PROMPT1 ' '
+\set PROMPT1 ''
+
+-- icon segment
+\set PROMPT1 :PROMPT1 '  '
+-- \set PROMPT1 :PROMPT1 :fg_black :bg_red :arrow
+-- \set PROMPT1 :PROMPT1 :fg_red '  '
+-- \set PROMPT1 :PROMPT1 :fg_red :bg_magenta :arrow
+
+-- host segment
+\set PROMPT1 :PROMPT1 :fg_black :bg_magenta :arrow
+\set PROMPT1 :PROMPT1 :fg_white ' %m '
+-- \set PROMPT1 :PROMPT1 :fg_magenta :bg_blue :arrow
+\set PROMPT1 :PROMPT1 :fg_magenta :bg_green :arrow
+
+-- user segment
+\set PROMPT1 :PROMPT1 :fg_black ' %n %#'
+-- \set PROMPT1 :PROMPT1 :fg_blue :bg_green :arrow
+-- \set PROMPT1 :PROMPT1 :fg_blue :bg_yellow :arrow
+\set PROMPT1 :PROMPT1 :fg_green :bg_yellow :arrow
+
+-- database segment
+\set PROMPT1 :PROMPT1 :fg_black ' %/ %x'
+-- \set PROMPT1 :PROMPT1 :fg_green :bg_black :arrow
+\set PROMPT1 :PROMPT1 :fg_yellow :bg_black :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;2;0;43;54m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;235m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;236m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;237m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;240m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;241m%]' :arrow
+-- \set PROMPT1 :PROMPT1 :fg_green '%[\x1b[48;5;244m%]' :arrow
+
+\set PROMPT1 :PROMPT1 :reset ' '
+
+-- \set PROMPT1 '%n%/%R%%x '
+
+\set PROMPT2 ''
+
+\set HISTFILE ~/.psql/.psql_history-:DBNAME
+\set HISTSIZE 10000
+
+\x auto
+\set ON_ERROR_STOP on
+\set ON_ERROR_ROLLBACK interactive
+
+-- \set COMP_KEYWORD_CASE upper
+\set COMP_KEYWORD_CASE lower
+
+\pset null '¤'
+\pset linestyle 'unicode'
+
+\pset unicode_border_linestyle single
+\pset unicode_column_linestyle single
+\pset unicode_header_linestyle double
+
+\timing on
+
+set intervalstyle to 'postgres_verbose';
+
+\setenv LESS '-iMFXSx4R'
+
+-- Shortcuts
+-- To use, prefix query with :<key>, for example
+-- :eav SELECT (*) FROM large_table;
+\set ea 'EXPLAIN ANALYZE'
+\set eav 'EXPLAIN ANALYZE VERBOSE'
+
+\unset QUIET
