@@ -59,14 +59,13 @@ plugins=(brew autojump extract tmux docker fzf)
 typeset -gU fpath path
 
 fpath=(
-	/usr/local/share/zsh-completions
 	/usr/local/share/zsh/site-functions
 	$fpath
 )
 
 # fpath=($HOME/sandbox/docker/zsh-completions $fpath)
 source $ZSH/oh-my-zsh.sh
-autoload -U compinit && compinit
+# autoload -U compinit && compinit
 
 # ulimit
 ulimit -n 524288
