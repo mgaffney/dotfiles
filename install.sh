@@ -100,6 +100,10 @@ function install_neovim() {
   install "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 }
 
+function install_bat() {
+  install "${SCRIPTDIR}/bat" "${HOME}/.config/bat"
+}
+
 function install_creds() {
   local -r target="${HOME}/.creds"
   mkdir -p "${target}"
@@ -118,6 +122,7 @@ function main() {
   install_dircolors || return
   install_neovim || return
   install_creds || return
+  install_bat || return
 }
 
 main "$@"
