@@ -258,6 +258,15 @@ aws_acct_prompt() {
 	fi
 }
 
+# Colors: red, blue, green, cyan, yellow, magenta, black, white
+local_pg_url() {
+	if [[ -n "$PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start red white
+		rprompt_segment red white "PG_URL "
+	fi
+}
+
 # function _vi_status() {
 #   if {echo $fpath | grep -q "plugins/vi-mode"}; then
 #     echo "$(vi_mode_prompt_info)"
@@ -290,5 +299,6 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='%{%f%b%k%}$(aws_acct_prompt)'
+# RPROMPT='%{%f%b%k%}$(aws_acct_prompt)'
+RPROMPT='%{%f%b%k%}$(local_pg_url)'
 # RPROMPT='%{%f%b%k%}$(vi_mode_prompt)'
