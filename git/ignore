@@ -8,6 +8,7 @@ _scraps/
 _scrap/
 *scrap.json
 *.scrap
+scrap*
 
 ### Logs ###
 *.log
