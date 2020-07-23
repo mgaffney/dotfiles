@@ -25,6 +25,10 @@ docs/.rvmrc
 .envrc
 .direnv/
 
+### Files with .ignore in name ###
+*.ignore
+*.ignore.*
+
 ### Temp directories ###
 tmp/
 temp/
