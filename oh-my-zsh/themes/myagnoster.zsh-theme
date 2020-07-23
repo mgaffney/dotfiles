@@ -261,9 +261,10 @@ aws_acct_prompt() {
 # Colors: red, blue, green, cyan, yellow, magenta, black, white
 local_pg_url() {
 	if [[ -n "$PG_URL" ]]; then
+
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
 		rprompt_start red white
-		rprompt_segment red white "PG_URL "
+    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
 	fi
 }
 
@@ -277,12 +278,39 @@ function vi_mode_prompt_info() {
   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
 }
 
-function vi_mode_prompt() {
+function vi_mode_prompt_right() {
   # if [[ $fpath == *"plugins/vi-mode"* ]]; then
   if [[ "$fpath" =~ "plugins/vi-mode" ]]; then
 		rprompt_start red white
 		rprompt_segment red white "$(vi_mode_prompt_info) "
     # echo "$(vi_mode_prompt_info)"
+  fi
+}
+
+function vi_mode_prompt_left() {
+  if [[ "$fpath" =~ "plugins/vi-mode" ]]; then
+    case $KEYMAP in
+      # normal mode
+      vicmd)
+        prompt_segment brblue white
+        echo -n "N"
+        ;;
+      # visual mode
+      vivis|vivli)
+        prompt_segment magenta white
+        echo -n "V"
+        ;;
+      # replace mode
+      virep)
+        prompt_segment red white
+        echo -n "R"
+        ;;
+      # insert mode
+      main|viins|*)
+        prompt_segment yellow white
+        echo -n "I"
+        ;;
+    esac
   fi
 }
 
@@ -292,6 +320,7 @@ build_prompt() {
   prompt_status
   prompt_virtualenv
   prompt_context
+  vi_mode_prompt_left
   prompt_dir
   prompt_git
   prompt_hg
@@ -301,4 +330,4 @@ build_prompt() {
 PROMPT='%{%f%b%k%}$(build_prompt) '
 # RPROMPT='%{%f%b%k%}$(aws_acct_prompt)'
 RPROMPT='%{%f%b%k%}$(local_pg_url)'
-# RPROMPT='%{%f%b%k%}$(vi_mode_prompt)'
+# RPROMPT='%{%f%b%k%}$(vi_mode_prompt_right)'
