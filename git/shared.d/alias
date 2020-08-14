@@ -90,6 +90,12 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# List all branches
 	branches = branch -a
 	branches2 = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(refname:short)\" refs/remotes
+
+	# List local branches and last commit time
+	recent = !"git recent2"
+	recent1 = for-each-ref --sort='-authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads
+	recent2 = branch --sort=-committerdate --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
+
 	# List all tags - reverse sort
 	tags = tag --sort=-version:refname
 	# Show all git aliases:
@@ -106,7 +112,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	bfiles = "!git diff --name-only $(git merge-base master HEAD)..."
 	# Branch squash
 	# bsquash = "!git rebase -i $(git merge-base --fork-point master)"
-	bsquash = "!git rebase -i $(git merge-base master HEAD)"
+	bsquash = "!git rebase -i --autosquash $(git merge-base master HEAD)"
 
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 	# ctags = !.git/hooks/ctags
