@@ -138,13 +138,14 @@
 \set HISTSIZE 10000
 
 \x auto
-\set ON_ERROR_STOP on
+-- \set ON_ERROR_STOP on
 \set ON_ERROR_ROLLBACK interactive
 
 -- \set COMP_KEYWORD_CASE upper
 \set COMP_KEYWORD_CASE lower
 
-\pset null '¤'
+-- \pset null '¤'
+\pset null '¯\\_(ツ)_/¯'
 \pset linestyle 'unicode'
 
 \pset unicode_border_linestyle single
