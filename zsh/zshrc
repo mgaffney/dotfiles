@@ -50,6 +50,9 @@ ZSH_THEME="myagnoster"
 # Would you like to use another custom folder than $ZSH/custom?
 ZSH_CUSTOM=$DOTS/oh-my-zsh
 
+# use ripgrep with fzf
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
@@ -156,9 +159,6 @@ fi
 eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit
-
-# use ripgrep with fzf
-# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # Keep previous versions of homebrew formulas around
 export HOMEBREW_NO_INSTALL_CLEANUP=1
