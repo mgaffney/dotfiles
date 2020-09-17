@@ -1,4 +1,5 @@
 #### Custom ####
+_test*
 
 ### Scraps ###
 /scrap*
@@ -292,7 +293,7 @@ instance/
 docs/_build/
 
 # PyBuilder
-target/
+# target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
