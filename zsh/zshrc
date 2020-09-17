@@ -55,6 +55,7 @@ ZSH_CUSTOM=$DOTS/oh-my-zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(brew autojump extract tmux docker fzf)
+# plugins=(brew autojump extract tmux docker fzf vi-mode)
 
 typeset -gU fpath path
 
@@ -168,6 +169,9 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 [ -f $DOTS/zsh/privaterc ] && source $DOTS/zsh/privaterc
 
 complete -o nospace -C /Users/mgaffney/sandbox/go/landing/bin/vault vault
+
+# vi mode
+# source $DOTS/zsh/vim-mode-rc
 
 if [[ "$ZPROF" = true ]]; then
   zprof
