@@ -105,14 +105,14 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	ign = ls-files -o -i --exclude-standard
 
 	# Branch summary - show a summary of files changed on the branch
-	# bsum = "!git diff --compact-summary $(git merge-base --fork-point master)"
-	bsum = "!git diff --compact-summary $(git merge-base master HEAD)"
+	# bsum = "!git diff --compact-summary $(git merge-base --fork-point main)"
+	bsum = "!git diff --compact-summary $(git merge-base main HEAD)"
 	# Branch files - list the files changed on the branch
-	# bfiles = "!git diff --name-only --relative $(git merge-base --fork-point master)"
-	bfiles = "!git diff --name-only $(git merge-base master HEAD)..."
+	# bfiles = "!git diff --name-only --relative $(git merge-base --fork-point main)"
+	bfiles = "!git diff --name-only $(git merge-base main HEAD)..."
 	# Branch squash
-	# bsquash = "!git rebase -i $(git merge-base --fork-point master)"
-	bsquash = "!git rebase -i --autosquash $(git merge-base master HEAD)"
+	# bsquash = "!git rebase -i $(git merge-base --fork-point main)"
+	bsquash = "!git rebase -i --autosquash $(git merge-base main HEAD)"
 
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 	# ctags = !.git/hooks/ctags
