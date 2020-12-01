@@ -29,4 +29,7 @@
 [fetch]
 	prune = true
 
+[init]
+	defaultBranch = main
+
 # vim: set filetype=gitconfig :
