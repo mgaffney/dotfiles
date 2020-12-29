@@ -914,7 +914,7 @@
 	<key>Default Arrangement Name</key>
 	<string>4K Home</string>
 	<key>Default Bookmark Guid</key>
-	<string>5B9C5419-5C6A-4C6C-8B02-59D46D3BA184</string>
+	<string>EE0F8743-77D3-49D8-A639-7821566BDD09</string>
 	<key>DimBackgroundWindows</key>
 	<false/>
 	<key>DimInactiveSplitPanes</key>
@@ -6632,6 +6632,8 @@
 			<false/>
 			<key>Disable Window Resizing</key>
 			<true/>
+			<key>Draw Powerline Glyphs</key>
+			<false/>
 			<key>Flashing Bell</key>
 			<false/>
 			<key>Foreground Color</key>
@@ -6971,7 +6973,7 @@
 			<key>Name</key>
 			<string>Gaffney Dark - Sauce Font 2.1.0</string>
 			<key>Non Ascii Font</key>
-			<string>SourceCodeProNerdFontC-Regular 12</string>
+			<string>Menlo-Regular 11</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Non-ASCII Ligatures</key>
@@ -7137,7 +7139,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color-italic</string>
 			<key>Thin Strokes</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Triggers</key>
@@ -7145,7 +7147,7 @@
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unicode Version</key>
-			<integer>8</integer>
+			<integer>9</integer>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
