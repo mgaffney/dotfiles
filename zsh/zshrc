@@ -172,7 +172,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 [ -f $DOTS/zsh/privaterc ] && source $DOTS/zsh/privaterc
 
-complete -o nospace -C /Users/mgaffney/sandbox/go/landing/bin/vault vault
+complete -o nospace -C $HOME/sandbox/go/landing/bin/vault vault
+complete -o nospace -C $BOUNDARY/bin/boundary boundary
 
 # vi mode
 # source $DOTS/zsh/vim-mode-rc
