@@ -124,9 +124,13 @@ source $DOTS/zsh/functions
 source $HOME/.creds/homebrew
 eval `dircolors ~/.dircolors`
 
+# Boundary
+BOUNDARY=$HOME/sandbox/go/gomod/boundary
+
 ############################ BEGIN PATH ############################
 
 path=(
+  $BOUNDARY/bin
 	$HOME/bin
 	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
