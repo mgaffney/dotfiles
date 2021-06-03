@@ -39,6 +39,7 @@ temp/
 
 ### TODO files ###
 *TODO*
+*todo*
 
 #### Additions to generated sections ####
 
@@ -415,6 +416,7 @@ override.tf.json
 # Session
 Session.vim
 Sessionx.vim
+*.Session.vim
 
 # Temporary
 .netrwhist
