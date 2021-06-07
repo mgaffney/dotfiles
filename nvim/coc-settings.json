@@ -7,9 +7,20 @@
       "disableWorkspaceFolders": true,
       "filetypes": ["go"],
       "initializationOptions": {
+        "codelenses": {
+          "gc_details": false,
+          "test": true,
+          "tidy": true,
+          "generate": true
+        },
+        "analyses": {
+          "unreachable": true,
+          "unusedparams": true
+        },
         "usePlaceholders": true,
         "gofumpt": true,
-        "hoverKind": "FullDocumentation"
+        "hoverKind": "FullDocumentation",
+        "experimentalPostfixCompletions": true
       }
     }
   }
