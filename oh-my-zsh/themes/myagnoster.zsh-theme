@@ -187,11 +187,18 @@ prompt_status() {
 
 ####
 
+rprompt_started=''
 
 # Start the right prompt
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
 rprompt_start() {
+  if [[ -n $rprompt_started ]]; then
+    return
+  fi
+
+  rprompt_started="true"
+
   local bg fg
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
@@ -219,8 +226,13 @@ rprompt_segment() {
   local bg fg
   [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
   [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  [[ -n $1 ]] && nextbg="%F{$1}"
   if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
-    echo -n "%{$bg%F{$CURRENT_BG}%}$RSEGMENT_SEPARATOR%{$fg%} "
+    # background is changing
+      # fg = next background
+      # bg is current bg
+    # echo -n "%{$bg%F{$CURRENT_BG}%}$RSEGMENT_SEPARATOR%{$fg%} "
+    echo -n "%{$nextbg%}$RSEGMENT_SEPARATOR%{$bg%}%{$fg%} "
   else
     echo -n "%{$bg%}%{$fg%} "
   fi
@@ -258,13 +270,52 @@ aws_acct_prompt() {
 	fi
 }
 
+# brmagenta (violet in solarized) FG# 95 BG# 105
 # Colors: red, blue, green, cyan, yellow, magenta, black, white
 local_pg_url() {
-	if [[ -n "$PG_URL" ]]; then
-
+  if [[ -n "$PG_URL" ]]; then
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
 		rprompt_start red white
     rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+  fi
+}
+
+local_boundary_test_pg_url() {
+	if [[ -n "$BOUNDARY_TESTING_PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start 105 black
+    rprompt_segment 105 black "${"${BOUNDARY_TESTING_PG_URL##*/}"%\?*} "
+  fi
+}
+
+local_xpg_url_a() {
+	if [[ -n "$BOUNDARY_TESTING_PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start blue white
+    rprompt_segment blue white "${"${BOUNDARY_TESTING_PG_URL##*/}"%\?*} "
+  fi
+
+  if [[ -n "$PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start red white
+    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+  fi
+}
+
+# Colors: red, blue, green, cyan, yellow, magenta, black, white
+local_xpg_url_b() {
+	if [[ -n "$BOUNDARY_TESTING_PG_URL" ]] && [[ -n "$PG_URL" ]]; then
+  fi
+	if [[ -n "$BOUNDARY_TESTING_PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start blue white
+    rprompt_segment blue white "${"${BOUNDARY_TESTING_PG_URL##*/}"%\?*} "
+  elif [[ -n "$PG_URL" ]]; then
+		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
+		rprompt_start red white
+    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+	else
+		echo ''
 	fi
 }
 
@@ -327,7 +378,21 @@ build_prompt() {
   prompt_end
 }
 
+build_rprompt() {
+  local_boundary_test_pg_url
+  local_pg_url
+#   prompt_status
+#   prompt_virtualenv
+#   prompt_context
+#   vi_mode_prompt_left
+#   prompt_dir
+#   prompt_git
+#   prompt_hg
+#   prompt_end
+}
+
 PROMPT='%{%f%b%k%}$(build_prompt) '
 # RPROMPT='%{%f%b%k%}$(aws_acct_prompt)'
-RPROMPT='%{%f%b%k%}$(local_pg_url)'
+# RPROMPT='%{%f%b%k%}$(local_pg_url)'
+RPROMPT='%{%f%b%k%}$(build_rprompt)'
 # RPROMPT='%{%f%b%k%}$(vi_mode_prompt_right)'
