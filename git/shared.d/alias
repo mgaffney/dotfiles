@@ -23,6 +23,8 @@
 	# lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 	lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 
+	lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(10)%G?%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
+
 
 	lg7b = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)'
 
