@@ -85,14 +85,14 @@ setopt extendedglob
 
 ############################################## User configuration
 autoload -U zmv
-autoload -Uz up-line-or-beginning-search
-autoload -Uz down-line-or-beginning-search
-zle -N up-line-or-beginning-search
-zle -N down-line-or-beginning-search
-bindkey '\eOA' up-line-or-beginning-search
-bindkey '\e[A' up-line-or-beginning-search
-bindkey '\eOB' down-line-or-beginning-search
-bindkey '\e[B' down-line-or-beginning-search
+# autoload -Uz up-line-or-beginning-search
+# autoload -Uz down-line-or-beginning-search
+# zle -N up-line-or-beginning-search
+# zle -N down-line-or-beginning-search
+# bindkey '\eOA' up-line-or-beginning-search
+# bindkey '\e[A' up-line-or-beginning-search
+# bindkey '\eOB' down-line-or-beginning-search
+# bindkey '\e[B' down-line-or-beginning-search
 # option-c for fzf cd
 bindkey 'ç' fzf-cd-widget
 
@@ -182,3 +182,5 @@ complete -o nospace -C $BOUNDARY/bin/boundary boundary
 if [[ "$ZPROF" = true ]]; then
   zprof
 fi
+
+complete -o nospace -C /Users/mgaffney/sandbox/go/gomod/boundary/bin/boundary boundary
