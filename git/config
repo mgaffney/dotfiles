@@ -1,6 +1,7 @@
 [core]
 	quotepath = false
 	autocrlf = input
+	pager = less -F -X
 [push]
 	default = simple
 [include]
