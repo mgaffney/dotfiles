@@ -179,6 +179,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 complete -o nospace -C vault vault
 complete -o nospace -C $BOUNDARY/bin/boundary boundary
 
+eval "$(jira --completion-script-zsh)"
 # vi mode
 # source $DOTS/zsh/vim-mode-rc
 
