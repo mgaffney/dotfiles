@@ -38,6 +38,7 @@ alias htree='tree -I "vendor|website|ui" --dirsfirst'
 alias ehtree='etree -I "vendor|website|ui" --group-directories-first --sort=name'
 
 alias gtree='htree --prune -P "*.go"'
+alias ggtree='gtree -I "*test.go"'
 # alias ptree='tree --prune -P "*.py"'
 alias ptree='tree -I "*.pyc" --prune'
 
