@@ -122,6 +122,9 @@ export EDITOR="vim"
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
 source $HOME/.creds/homebrew
+[ -f $HOME/.creds/circleci ] && source $HOME/.creds/circleci
+[ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
+
 eval `dircolors ~/.dircolors`
 
 # Boundary
