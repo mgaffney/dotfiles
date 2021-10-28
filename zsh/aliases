@@ -162,3 +162,7 @@ alias fixbluetooth="blueutil -p 0 && sleep 1 && blueutil -p 1"
 
 # git hub command line
 alias ghprco='gh pr checkout'
+
+# Increase priority of iCloud sync
+# https://apple.stackexchange.com/questions/264915/icloud-drive-is-stuck-uploading-items-and-no-longer-syncs
+alias kick-icloud="sudo renice -n -10 -p $(pgrep bird)"
