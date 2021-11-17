@@ -2,6 +2,9 @@
 _test*
 _warehouse*
 
+### Patch files ###
+*.patch
+
 ### Scraps ###
 /scrap*
 scraps/
@@ -31,9 +34,11 @@ docs/.rvmrc
 *.ignore
 *.ignore.*
 
-### Temp directories ###
-tmp/
-temp/
+### Temp files or directories ###
+*tmp/
+*temp/
+*tmp
+*temp
 
 ### Visual Studio ###
 .vscode/
@@ -50,9 +55,6 @@ temp/
 ### Tags ###
 .tags*
 tags-ja
-
-### macOS ###
-Icon
 
 ### Vim ###
 .projections.json
