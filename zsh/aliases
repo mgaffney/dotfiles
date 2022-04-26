@@ -61,7 +61,7 @@ alias git=hub
 
 alias hgrep='history | grep'
 alias extrabrew='ls `brew --repository`/Library/Contributions/cmd'
-alias burp='brew update; brew outdated; brew upgrade; brew outdated --cask;'
+alias burp='brew update; brew outdated; brew upgrade; brew outdated --greedy;'
 # alias bcurp='brew update; brew outdated --cask; brew cask upgrade;'
 
 # alias 3lmdev='pythonbrew venv use 3lm-master'
