@@ -25,7 +25,6 @@
 
 	lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(10)%G?%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 
-
 	lg7b = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)'
 
 lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
@@ -111,17 +110,17 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 
 	# Branch summary - show a summary of files changed on the branch
 	# bsum = "!git diff --compact-summary $(git merge-base --fork-point main)"
-	bsum = "!git diff --compact-summary $(git merge-base main HEAD)"
+	bsum = "!f() { git diff --compact-summary $(git merge-base ${1-main} HEAD); }; f"
 
 	# Branch directory summary - show a summary of changes for each sub-directory
-	dsum = "!git diff --dirstat $(git merge-base main HEAD)"
+	dsum = "!f() { git diff --dirstat $(git merge-base ${1-main} HEAD); }; f"
 
 	# Branch files - list the files changed on the branch
 	# bfiles = "!git diff --name-only --relative $(git merge-base --fork-point main)"
-	bfiles = "!git diff --name-only $(git merge-base main HEAD)..."
+	bfiles = "!f() { git diff --name-only $(git merge-base ${1-main} HEAD)...; }; f"
 	# Branch squash
 	# bsquash = "!git rebase -i $(git merge-base --fork-point main)"
-	bsquash = "!git rebase -i --autosquash $(git merge-base main HEAD)"
+	bsquash = "!f() { git rebase -i --autosquash $(git merge-base ${1-main} HEAD); }; f"
 
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 	# ctags = !.git/hooks/ctags
