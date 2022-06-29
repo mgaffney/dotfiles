@@ -130,4 +130,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	#   checks out the 3rd pull request onto dest-branch
 	# prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; } ; f"
 
+	# Fetch a pull request from GitHub
+	prc = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; } ; f"
+
 # vim: set filetype=gitconfig :
