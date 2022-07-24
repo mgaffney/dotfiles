@@ -128,6 +128,11 @@ function rardir() {
 	local -r dir="$1"
 	local -r archive="$1.rar"
 
+
+  # xattr -d com.apple.quarantine /usr/local/Caskroom/rar/6.10/rar/unrar
+  # xattr -d com.apple.quarantine $(which rar)
+  # xattr -d com.apple.quarantine /usr/local/Caskroom/rar/6.12/rar/*
+
   rar a -v50M -r "${archive}" -x "__MACOSX/*" "${dir}"
   return 0
 }
