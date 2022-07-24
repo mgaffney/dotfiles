@@ -119,7 +119,6 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# bfiles = "!git diff --name-only --relative $(git merge-base --fork-point main)"
 	bfiles = "!f() { git diff --name-only $(git merge-base ${1-main} HEAD)...; }; f"
 	# Branch squash
-	# bsquash = "!git rebase -i $(git merge-base --fork-point main)"
 	bsquash = "!f() { git rebase -i --autosquash $(git merge-base ${1-main} HEAD); }; f"
 
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
