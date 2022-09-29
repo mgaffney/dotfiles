@@ -111,6 +111,10 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# Branch summary - show a summary of files changed on the branch
 	# bsum = "!git diff --compact-summary $(git merge-base --fork-point main)"
 	bsum = "!f() { git diff --compact-summary $(git merge-base ${1-main} HEAD); }; f"
+	bsum1 = "!f() { git diff --stat $(git merge-base ${1-main} HEAD); }; f"
+	bsum2 = "!f() { git diff --summary $(git merge-base ${1-main} HEAD); }; f"
+	bsum3 = "!f() { git diff --stat-width=250 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
+	bsum4 = "!f() { git diff --stat-width=250 --stat-graph-width=40 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
 
 	# Branch directory summary - show a summary of changes for each sub-directory
 	dsum = "!f() { git diff --dirstat $(git merge-base ${1-main} HEAD); }; f"
