@@ -56,11 +56,12 @@ ZSH_CUSTOM=$DOTS/oh-my-zsh
 export FZF_BASE='/opt/homebrew/opt/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew autojump extract tmux docker fzf)
+plugins=(brew autojump extract tmux fzf)
 # plugins=(brew autojump extract tmux docker fzf vi-mode)
 
 typeset -gU fpath path
