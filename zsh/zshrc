@@ -2,6 +2,8 @@ if [[ "$ZPROF" = true ]]; then
   zmodload zsh/zprof
 fi
 
+export PATH=/opt/homebrew/bin:$PATH
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -51,6 +53,7 @@ DEFAULT_USER=$(whoami)
 ZSH_CUSTOM=$DOTS/oh-my-zsh
 
 # use ripgrep with fzf
+export FZF_BASE='/opt/homebrew/opt/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
@@ -63,7 +66,7 @@ plugins=(brew autojump extract tmux docker fzf)
 typeset -gU fpath path
 
 fpath=(
-	/usr/local/share/zsh/site-functions
+	# /usr/local/share/zsh/site-functions
 	$fpath
 )
 
@@ -112,6 +115,7 @@ bindkey 'ç' fzf-cd-widget
 # export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
+
 gopath=(
 	$HOME/sandbox/go/{landing,personal,work}
 )
@@ -125,7 +129,6 @@ source $HOME/.creds/homebrew
 [ -f $HOME/.creds/circleci ] && source $HOME/.creds/circleci
 [ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
 
-eval `dircolors ~/.dircolors`
 
 # Boundary
 BOUNDARY=$HOME/sandbox/go/gomod/boundary
@@ -137,14 +140,16 @@ path=(
 	$HOME/bin
 	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
-	/usr/local/{bin,sbin}
-	/usr/local/opt/go/libexec/bin
+	/usr/local/bin
+	# /usr/local/opt/go/libexec/bin
 	/usr/{bin,sbin}
 	/{bin,sbin}
-  /usr/local/opt/qt/bin
+  # /usr/local/opt/qt/bin
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
 )
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(dircolors ~/.dircolors)"
 
 # For compilers to find protobuf@3.6 you may need to set:
 # export LDFLAGS="-L/usr/local/opt/protobuf@3.6/lib"

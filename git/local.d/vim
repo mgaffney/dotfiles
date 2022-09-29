@@ -1,4 +1,4 @@
 [core]
-	editor = /usr/local/bin/vim -f
+	editor = /opt/homebrew/bin/nvim
 
 # vim: set filetype=gitconfig :
