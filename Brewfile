@@ -115,9 +115,6 @@ cask "font-libre-franklin"
 cask "font-sauce-code-pro-nerd-font"
 cask "java"
 cask "keepingyouawake"
-cask "keybase"
-cask "obsidian"
 cask "pgadmin4"
-cask "qlmarkdown"
-cask "vagrant"
-cask "virtualbox"
+
+# vim: set filetype=ruby:
