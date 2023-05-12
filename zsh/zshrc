@@ -120,20 +120,26 @@ autoload -U zmv
 # -X or --no-init (don't clear the screen when less exits)
 # LESS="-FRX"; export LESS
 # LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
-
 # export LS_COLORS='di=01;34:ln=36:so=32:pi=33:ex=32:bd=34;46:cd=34;43:su=0;41:sg=30;46:tw=30;42:ow=37;45'
 
 # Vagrant
 # export VAGRANT_DEFAULT_PROVIDER='vmware_fusion'
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
+# Editor and Pager
+EDITOR="vim"
+export EDITOR
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+# export LESSOPEN="|/opt/homebrew/bin/lesspipe.sh %s"
+PAGER="less -FirSwX"
+MANPAGER="$PAGER"
+export PAGER MANPAGER
 
 gopath=(
 	$HOME/sandbox/go/{landing,personal,work}
 )
 export GOPATH=${(j.:.)gopath}
-
-export EDITOR="vim"
 
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
@@ -214,3 +220,4 @@ fi
 
 complete -o nospace -C /Users/mgaffney/sandbox/go/gomod/boundary/bin/boundary boundary
 # zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")
+# vim: set filetype=zsh:

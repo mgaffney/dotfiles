@@ -111,6 +111,10 @@ function install_creds() {
   cp -a "${SCRIPTDIR}/creds/" "${target}"
 }
 
+function install_less() {
+  install "${SCRIPTDIR}/less/lessfilter" "${HOME}/.lessfilter"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -123,6 +127,7 @@ function main() {
   install_neovim || return
   install_creds || return
   install_bat || return
+  install_less || return
 }
 
 main "$@"
