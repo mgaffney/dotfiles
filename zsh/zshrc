@@ -56,13 +56,25 @@ ZSH_CUSTOM=$DOTS/oh-my-zsh
 export FZF_BASE='/opt/homebrew/opt/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
+function zvm_after_init() {
+  if [[ -d "$FZF_BASE/shell" ]] ; then
+    source "$FZF_BASE/shell/completion.zsh"
+    source "$FZF_BASE/shell/key-bindings.zsh"
+  fi
+  bindkey 'ç' fzf-cd-widget
+  bindkey '\eOA' up-line-or-beginning-search
+  bindkey '\e[A' up-line-or-beginning-search
+  bindkey '\eOB' down-line-or-beginning-search
+  bindkey '\e[B' down-line-or-beginning-search
+  export ZVM_VI_EDITOR=nvim
+}
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew autojump extract tmux fzf)
-# plugins=(brew autojump extract tmux docker fzf vi-mode)
+plugins=(brew autojump extract tmux)
+plugins+=(zsh-vi-mode)
 
 typeset -gU fpath path
 
@@ -98,7 +110,6 @@ autoload -U zmv
 # bindkey '\eOB' down-line-or-beginning-search
 # bindkey '\e[B' down-line-or-beginning-search
 # option-c for fzf cd
-bindkey 'ç' fzf-cd-widget
 
 # export PAGER="less"
 
@@ -189,8 +200,17 @@ eval "$(jira --completion-script-zsh)"
 # vi mode
 # source $DOTS/zsh/vim-mode-rc
 
+# oh-my-zsh vi-mode plugin settings
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/vi-mode
+#
+# VI_MODE_SET_CURSOR: controls whether the cursor style is changed when
+# switching to a different input mode. Set it to true to enable it
+# (default: unset):
+# export VI_MODE_SET_CURSOR=true
+
 if [[ "$ZPROF" = true ]]; then
   zprof
 fi
 
 complete -o nospace -C /Users/mgaffney/sandbox/go/gomod/boundary/bin/boundary boundary
+# zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")

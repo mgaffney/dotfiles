@@ -325,9 +325,9 @@ local_xpg_url_b() {
 #   fi
 # }
 
-function vi_mode_prompt_info() {
-  echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
-}
+# function vi_mode_prompt_info() {
+#   echo "${${KEYMAP/vicmd/$MODE_INDICATOR}/(main|viins)/}"
+# }
 
 function vi_mode_prompt_right() {
   # if [[ $fpath == *"plugins/vi-mode"* ]]; then
