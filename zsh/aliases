@@ -67,7 +67,7 @@ alias burp='brew update; brew outdated; brew upgrade; brew outdated --greedy;'
 # alias 3lmdev='pythonbrew venv use 3lm-master'
 
 # start using neovim
-alias ovim='/usr/local/bin/vim'
+alias ovim='/opt/homebrew/bin/vim'
 alias vim='nvim'
 
 alias mvims='mvim --remote-tab-silent'

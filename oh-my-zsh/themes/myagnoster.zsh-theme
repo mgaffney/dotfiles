@@ -127,7 +127,7 @@ prompt_hg() {
     if $(hg prompt >/dev/null 2>&1); then
       if [[ $(hg prompt "{status|unknown}") = "?" ]]; then
         # if files are not added
-        prompt_segment red white
+        prompt_segment red black
         st='±'
       elif [[ -n $(hg prompt "{status|modified}") ]]; then
         # if any modification
@@ -256,8 +256,8 @@ rprompt_end() {
 aws_acct_prompt() {
 	if [[ "$AWS_ACCT" == "aws-personal" ]]; then
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
-		rprompt_start red white
-		rprompt_segment red white "$AWS_ACCT "
+		rprompt_start red black
+		rprompt_segment red black "$AWS_ACCT "
 		# rprompt_end
 	elif [[ "$AWS_ACCT" == "aws-company" ]]; then
 		rprompt_start magenta white
@@ -275,8 +275,8 @@ aws_acct_prompt() {
 local_pg_url() {
   if [[ -n "$PG_URL" ]]; then
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
-		rprompt_start red white
-    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+		rprompt_start red black
+    rprompt_segment red black "${"${PG_URL##*/}"%\?*} "
   fi
 }
 
@@ -297,8 +297,8 @@ local_xpg_url_a() {
 
   if [[ -n "$PG_URL" ]]; then
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
-		rprompt_start red white
-    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+		rprompt_start red black
+    rprompt_segment red black "${"${PG_URL##*/}"%\?*} "
   fi
 }
 
@@ -312,8 +312,8 @@ local_xpg_url_b() {
     rprompt_segment blue white "${"${BOUNDARY_TESTING_PG_URL##*/}"%\?*} "
   elif [[ -n "$PG_URL" ]]; then
 		# rprompt_segment black red "$BLACK_LEFT_ARROW_CHAR"
-		rprompt_start red white
-    rprompt_segment red white "${"${PG_URL##*/}"%\?*} "
+		rprompt_start red black
+    rprompt_segment red black "${"${PG_URL##*/}"%\?*} "
 	else
 		echo ''
 	fi
@@ -332,8 +332,8 @@ local_xpg_url_b() {
 function vi_mode_prompt_right() {
   # if [[ $fpath == *"plugins/vi-mode"* ]]; then
   if [[ "$fpath" =~ "plugins/vi-mode" ]]; then
-		rprompt_start red white
-		rprompt_segment red white "$(vi_mode_prompt_info) "
+		rprompt_start red black
+		rprompt_segment red black "$(vi_mode_prompt_info) "
     # echo "$(vi_mode_prompt_info)"
   fi
 }
@@ -353,7 +353,7 @@ function vi_mode_prompt_left() {
         ;;
       # replace mode
       virep)
-        prompt_segment red white
+        prompt_segment red black
         echo -n "R"
         ;;
       # insert mode
