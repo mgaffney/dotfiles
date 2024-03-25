@@ -47,6 +47,27 @@
 -- cyan     37
 -- green    64
 
+-- Selenized
+-- #  ANSI    Selenized
+-- 0  black   bg_1
+-- 1  red     red
+-- 2  green   green
+-- 3  yellow  yellow
+-- 4  blue    blue
+-- 5  magenta magenta
+-- 6  cyan    cyan
+-- 7  white   dim_0
+
+-- bright
+-- 8  black   bg_2
+-- 9  red     br_red
+-- 10 green   br_green
+-- 11 yellow  br_yellow
+-- 12 blue    br_blue
+-- 13 magenta br_magenta
+-- 14 cyan    br_cyan
+-- 15 white   fg_1
+
 -- \set PROMPT1 '%/%#%x '
 -- \set PROMPT1 '%[%033[1m%]%M/%/%R%[%033[0m%]%# '
 -- \set PROMPT1 '%M:%[%033[1;31m%]%>%[%033[0m%] %n@%/%R%#%x '
@@ -61,7 +82,8 @@
 -- \set fg '%[\x1b[38;5;'
 -- \set color_end 'm%]'
 
-\set fg_white '%[\x1b[38;5;254m%]'
+-- \set fg_white '%[\x1b[38;5;254m%]'
+\set fg_white '%[\x1b[38;5;15m%]'
 
 -- \set black '0;43;54'
 \set black '7;54;66'
@@ -71,20 +93,26 @@
 -- \set fg_black '%[\x1b[38;2;0;43;54m%]'
 -- \set fg_black '%[\x1b[38;5;234m%]'
 
-\set bg_blue '%[\x1b[48;5;33m%]'
-\set fg_blue '%[\x1b[38;5;33m%]'
+\set bg_blue '%[\x1b[48;5;12m%]'
+\set fg_blue '%[\x1b[38;5;12m%]'
 
-\set bg_green '%[\x1b[48;5;64m%]'
-\set fg_green '%[\x1b[38;5;64m%]'
+\set bg_green '%[\x1b[48;5;2m%]'
+\set fg_green '%[\x1b[38;5;2m%]'
 
-\set bg_yellow '%[\x1b[48;5;136m%]'
-\set fg_yellow '%[\x1b[38;5;136m%]'
+\set bg_yellow '%[\x1b[48;5;3m%]'
+\set fg_yellow '%[\x1b[38;5;3m%]'
 
 \set bg_magenta '%[\x1b[48;5;125m%]'
 \set fg_magenta '%[\x1b[38;5;125m%]'
 
-\set bg_red '%[\x1b[48;5;160m%]'
-\set fg_red '%[\x1b[38;5;160m%]'
+-- \set bg_magenta '%[\x1b[48;5;13m%]'
+-- \set fg_magenta '%[\x1b[38;5;13m%]'
+
+-- \set bg_red '%[\x1b[48;5;160m%]'
+-- \set fg_red '%[\x1b[38;5;160m%]'
+
+\set bg_red '%[\x1b[48;5;1m%]'
+\set fg_red '%[\x1b[38;5;1m%]'
 
 \set reset '%[\x1b[0m%]'
 \set arrow ''
