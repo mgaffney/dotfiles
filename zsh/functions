@@ -167,13 +167,7 @@ function rmqq() {
 function sqlup() {
   if [[ -n "${PG_DB}" ]]; then
     if [[ -d internal/db/schema/migrations ]]; then
-      for f in $(ls -v internal/db/schema/migrations/{base,oss}/postgres/**/*.up.sql); do
-        echo "${f}"
-        psql -d "${PG_DB}" -f "${f}"
-      done
-    fi
-    if [[ -d internal/db/schema/migrations/enterprise ]]; then
-      for f in $(ls -v internal/db/schema/migrations/enterprise/postgres/**/*.up.sql); do
+      for f in $(gls -v internal/db/schema/migrations/{base,oss}/postgres/**/*.up.sql); do
         echo "${f}"
         psql -d "${PG_DB}" -f "${f}"
       done
