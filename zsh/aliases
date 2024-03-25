@@ -167,3 +167,5 @@ alias ghprco='gh pr checkout'
 # Increase priority of iCloud sync
 # https://apple.stackexchange.com/questions/264915/icloud-drive-is-stuck-uploading-items-and-no-longer-syncs
 alias kick-icloud="sudo renice -n -10 -p $(pgrep bird)"
+
+alias ttyupmax='sudo sysctl kern.tty.ptmx_max=999'
