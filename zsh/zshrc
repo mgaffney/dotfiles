@@ -173,9 +173,6 @@ eval "$(dircolors ~/.dircolors)"
 # export LDFLAGS="-L/usr/local/opt/protobuf@3.6/lib"
 # export CPPFLAGS="-I/usr/local/opt/protobuf@3.6/include"
 
-# eval "$(hub alias -s)"
-
-
 ############################ END PATH ############################
 
 GPG_TTY=$(tty)
