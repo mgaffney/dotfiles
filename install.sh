@@ -115,6 +115,10 @@ function install_less() {
   install "${SCRIPTDIR}/less/lessfilter" "${HOME}/.lessfilter"
 }
 
+function install_wget() {
+  install "${SCRIPTDIR}/wget/wgetrc" "${HOME}/.wgetrc"
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -128,6 +132,7 @@ function main() {
   install_creds || return
   install_bat || return
   install_less || return
+  install_wget || return
 }
 
 main "$@"
