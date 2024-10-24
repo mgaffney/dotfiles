@@ -148,13 +148,9 @@ source $HOME/.creds/homebrew
 [ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
 
 
-# Boundary
-BOUNDARY=$HOME/sandbox/go/gomod/boundary
-
 ############################ BEGIN PATH ############################
 
 path=(
-  $BOUNDARY/bin
 	$HOME/bin
 	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
@@ -197,7 +193,6 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # complete -o nospace -C $HOME/sandbox/go/landing/bin/vault vault
 complete -o nospace -C vault vault
-complete -o nospace -C $BOUNDARY/bin/boundary boundary
 
 eval "$(jira --completion-script-zsh)"
 # vi mode
@@ -215,6 +210,6 @@ if [[ "$ZPROF" = true ]]; then
   zprof
 fi
 
-complete -o nospace -C /Users/mgaffney/sandbox/go/gomod/boundary/bin/boundary boundary
+complete -o nospace -C boundary boundary
 # zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")
 # vim: set filetype=zsh:
