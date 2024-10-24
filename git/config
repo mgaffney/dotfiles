@@ -3,7 +3,7 @@
 	autocrlf = input
 	pager = less -F -X
 [push]
-	default = simple
+	default = current
 [include]
 	path = shared
 	path = local

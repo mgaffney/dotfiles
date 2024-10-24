@@ -16,6 +16,8 @@
 	# show graph of current branch
 	lgb = !"git lg7b"
 
+    lm  = log --author=\"Michael Gaffney\"
+
 	# lg3 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(6)%an%C(reset)%C(1)%d%C(reset)' --all
 	# lg4 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(10)%an%C(reset) %C(7)·%C(reset) %C(1)%d%C(reset)' --all
 
@@ -95,6 +97,15 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	branches = branch -a
 	branches2 = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(refname:short)\" refs/remotes
 
+    o         = log --graph @{u}..HEAD
+    out       = log --graph @{u}..HEAD
+    outp      = log -p      @{u}..HEAD
+    outgoing  = log --graph @{u}..HEAD
+    in        = log --graph HEAD..@{u}
+    incoming  = log --graph HEAD..@{u}
+    inp       = log -p      HEAD..@{u}
+    inll      = log         HEAD..@{u} --decorate --numstat --pretty=format:"%C(yellow)%h\\ %C(reset)%<(72,trunc)%s%C(blue)\\ [%an]%C(red)%d"
+
 	# List local branches and last commit time
 	recent = !"git recent2"
 	recent1 = for-each-ref --sort='-authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads
@@ -110,20 +121,20 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 
 	# Branch summary - show a summary of files changed on the branch
 	# bsum = "!git diff --compact-summary $(git merge-base --fork-point main)"
-	bsum = "!f() { git diff --compact-summary $(git merge-base ${1-main} HEAD); }; f"
-	bsum1 = "!f() { git diff --stat $(git merge-base ${1-main} HEAD); }; f"
-	bsum2 = "!f() { git diff --summary $(git merge-base ${1-main} HEAD); }; f"
-	bsum3 = "!f() { git diff --stat-width=250 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
-	bsum4 = "!f() { git diff --stat-width=250 --stat-graph-width=40 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
+	# bsum = "!f() { git diff --compact-summary $(git merge-base ${1-main} HEAD); }; f"
+	# bsum1 = "!f() { git diff --stat $(git merge-base ${1-main} HEAD); }; f"
+	# bsum2 = "!f() { git diff --summary $(git merge-base ${1-main} HEAD); }; f"
+	# bsum3 = "!f() { git diff --stat-width=250 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
+	# bsum4 = "!f() { git diff --stat-width=250 --stat-graph-width=40 --compact-summary $(git merge-base ${1-main} HEAD); }; f"
 
 	# Branch directory summary - show a summary of changes for each sub-directory
-	dsum = "!f() { git diff --dirstat $(git merge-base ${1-main} HEAD); }; f"
+	# dsum = "!f() { git diff --dirstat $(git merge-base ${1-main} HEAD); }; f"
 
 	# Branch files - list the files changed on the branch
 	# bfiles = "!git diff --name-only --relative $(git merge-base --fork-point main)"
-	bfiles = "!f() { git diff --name-only $(git merge-base ${1-main} HEAD)...; }; f"
+	# bfiles = "!f() { git diff --name-only $(git merge-base ${1-main} HEAD)...; }; f"
 	# Branch squash
-	bsquash = "!f() { git rebase -i --autosquash $(git merge-base ${1-main} HEAD); }; f"
+	# bsquash = "!f() { git rebase -i --autosquash $(git merge-base ${1-main} HEAD); }; f"
 
 	# ctags hook from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html
 	# ctags = !.git/hooks/ctags
@@ -134,6 +145,16 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# prstash = "!f() { git fetch $1 refs/pull-requests/$2/from:$3; } ; f"
 
 	# Fetch a pull request from GitHub
-	prc = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; } ; f"
+	# prc = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; } ; f"
+
+	# move a branch to a new base
+	movebranch = "!f() { \
+		: git checkout ; \
+		git rebase --onto $2 $(git merge-base $1 @); \
+	}; f"
+
+	# From tpope vim-fugitive #2066
+	# https://github.com/tpope/vim-fugitive/discussions/2066#discussioncomment-3864364
+	work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
 
 # vim: set filetype=gitconfig :
