@@ -139,11 +139,6 @@ PAGER="less -FirSwX"
 MANPAGER="$PAGER"
 export PAGER MANPAGER
 
-gopath=(
-	$HOME/sandbox/go/{landing,personal,work}
-)
-export GOPATH=${(j.:.)gopath}
-
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
 source $HOME/.creds/homebrew
@@ -155,7 +150,6 @@ source $HOME/.creds/homebrew
 
 path=(
 	$HOME/bin
-	$HOME/sandbox/go/{landing,personal,work}/bin
 	$HOME/.cargo/bin
 	/usr/local/bin
 	# /usr/local/opt/go/libexec/bin
