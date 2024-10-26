@@ -156,5 +156,6 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# From tpope vim-fugitive #2066
 	# https://github.com/tpope/vim-fugitive/discussions/2066#discussioncomment-3864364
 	work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
+	# work = !sh -c 'git fetch && git switch @{upstream} -t -b \"$@\"' _
 
 # vim: set filetype=gitconfig :
