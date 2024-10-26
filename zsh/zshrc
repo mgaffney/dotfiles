@@ -57,10 +57,8 @@ export FZF_BASE='/opt/homebrew/opt/fzf'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 function zvm_after_init() {
-  if [[ -d "$FZF_BASE/shell" ]] ; then
-    source "$FZF_BASE/shell/completion.zsh"
-    source "$FZF_BASE/shell/key-bindings.zsh"
-  fi
+  # Set up fzf key bindings and fuzzy completion
+  source <(fzf --zsh)
   bindkey 'ç' fzf-cd-widget
   bindkey '\eOA' up-line-or-beginning-search
   bindkey '\e[A' up-line-or-beginning-search
@@ -93,11 +91,16 @@ ulimit -u 2048
 
 # History settings
 #
-HISTSIZE=10000
-SAVEHIST=10000
-setopt APPEND_HISTORY           # append rather than overwrite history file.
-setopt HIST_EXPIRE_DUPS_FIRST   # allow dups, but expire old ones when I hit HISTSIZE
+HISTSIZE=100000
+SAVEHIST=100000
+# setopt APPEND_HISTORY          # append rather than overwrite history file.
+setopt HIST_EXPIRE_DUPS_FIRST    # allow dups, but expire old ones when I hit HISTSIZE
 setopt extendedglob
+setopt BANG_HIST                 # Treat the '!' character specially during expansion.
+setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
+setopt INC_APPEND_HISTORY        # Write to the history file immediately, not when the shell exits.
+setopt SHARE_HISTORY             # Share history between all sessions.
+setopt HIST_IGNORE_SPACE         # Don't record an entry starting with a space.
 
 ############################################## User configuration
 autoload -U zmv

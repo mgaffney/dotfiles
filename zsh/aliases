@@ -1,22 +1,24 @@
 alias dircolors='gdircolors'
 # alias ls='gls --color=auto'
-alias l='ls -lahF'
 # alias la='l'
-alias ea='exa --long --color-scale --git -a -a -F'
+# alias ea='exa --long --color-scale --git -a -a -F'
+alias ea='eza --long --git --all --all --classify=auto'
 alias la='ea'
+alias l='la'
+alias exa=eza
 
-alias lsdot='ls -AFd .*'
-alias ladot='la -AFd .*'
+# alias lsdot='ls -AFd .*'
+# alias ladot='la -AFd .*'
 # alias ls='ls -FA'
 # alias la='ls -lah'
 
 #sort files by time modified with most recent at the end
-alias lt='ls -lahtr'
-alias et='ea --sort=modified'
+# alias lt='ls -lahtr'
+alias lt='ea --sort=newest'
 
 #sort files by size from smallest to largest
-alias lz='la -Sr'
-alias ez='ea --sort=filesize'
+# alias lz='la -Sr'
+alias lz='ea --sort=size'
 
 #display all extended info too
 alias lA='/bin/ls -GlahO -@'
@@ -31,7 +33,7 @@ alias vi='vim'
 alias more='less'
 alias m='less'
 
-alias etree='exa --tree --long --color-scale --git -F'
+alias etree='exa --tree --long --git -F'
 
 # ignore vendor and website directories in tree command
 alias htree='tree -I "vendor|website|ui" --dirsfirst'
