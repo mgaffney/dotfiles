@@ -145,6 +145,8 @@ source $HOME/.creds/homebrew
 [ -f $HOME/.creds/circleci ] && source $HOME/.creds/circleci
 [ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
 
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 
 ############################ BEGIN PATH ############################
 
@@ -152,10 +154,10 @@ path=(
 	$HOME/bin
 	$HOME/.cargo/bin
 	/usr/local/bin
+  $GOBIN
 	# /usr/local/opt/go/libexec/bin
 	/usr/{bin,sbin}
 	/{bin,sbin}
-  # /usr/local/opt/qt/bin
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
 )
 
