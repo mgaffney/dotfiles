@@ -25,7 +25,7 @@ alias lA='/bin/ls -GlahO -@'
 alias eA='ea --extended'
 
 #display .dot files in tree
-# alias tree='tree -a'
+alias tree='tree -a -I ".git"'
 alias md='mkdir'
 alias vi='vim'
 
@@ -79,6 +79,7 @@ alias ovimc='ovim -S Session.vim'
 
 alias matrix='cat /dev/urandom | hexdump -C | grep "ca fe"'
 
+alias oovim='nvim -u $HOME/.config/nvim/init.vim.old'
 # Rename/move a collection of files
 # ex: mmv *.log *.txt
 alias mmv='noglob zmv -W'
