@@ -28,3 +28,15 @@ git clone https://github.com/mgaffney/dotfiles.git
 cd dotfiles
 brew bundle install
 ``` 
+
+5. Install Oh My Zsh
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
+6. Run dotfiles install script
+
+```bash
+./install.sh
+```
