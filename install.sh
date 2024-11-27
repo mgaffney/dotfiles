@@ -67,10 +67,6 @@ function install_git() {
   install "${SCRIPTDIR}/git" "${HOME}/.config/git"
 }
 
-function install_alacritty() {
-  install "${SCRIPTDIR}/alacritty" "${HOME}/.config/alacritty"
-}
-
 function install_zsh() {
   install "${SCRIPTDIR}/zsh/zshrc" "${HOME}/.zshrc"
 }
@@ -123,7 +119,6 @@ function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
   install_git || return
-  install_alacritty || return
   install_zsh || return
   install_gpg || return
   install_psql || return
