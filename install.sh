@@ -115,6 +115,10 @@ function install_wget() {
   install "${SCRIPTDIR}/wget/wgetrc" "${HOME}/.wgetrc"
 }
 
+function set_mac_defaults() {
+  defaults write com.apple.screencapture disable-shadow -bool true
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
@@ -128,6 +132,7 @@ function main() {
   install_bat || return
   install_less || return
   install_wget || return
+  set_mac_defaults || return
 }
 
 main "$@"
