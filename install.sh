@@ -76,15 +76,6 @@ function install_psql() {
   install "${SCRIPTDIR}/psql/psqlrc" "${HOME}/.psqlrc"
 }
 
-function install_gpg {
-  local -r target="${HOME}/.gnupg"
-  mkdir -p "${target}"
-  install "${SCRIPTDIR}/gnupg/gpg.conf" "${target}/gpg.conf"
-  install "${SCRIPTDIR}/gnupg/gpg-agent.conf" "${target}/gpg-agent.conf"
-  keybase pgp export -q 21FE4844A1193A56 | gpg --import
-  keybase pgp export -q 21FE4844A1193A56 --secret | gpg --allow-secret-key-import --import
-}
-
 function install_dircolors {
   local -r target="${HOME}/sandbox/dircolors-solarized"
   mkdir -p "${HOME}/sandbox"
@@ -131,7 +122,6 @@ function main() {
   install_git || return
   install_zsh || return
   install_ohmyzsh || return
-  install_gpg || return
   install_psql || return
   install_dircolors || return
   install_neovim || return

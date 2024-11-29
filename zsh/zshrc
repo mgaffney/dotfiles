@@ -170,14 +170,6 @@ eval "$(dircolors ~/.dircolors)"
 
 ############################ END PATH ############################
 
-GPG_TTY=$(tty)
-export GPG_TTY
-
-# Setup GPG https://github.com/pstadler/keybase-gpg-github
-if ! pgrep gpg-agent &> /dev/null; then
-  eval $(gpg-agent --daemon)
-fi
-
 eval "$(direnv hook zsh)"
 
 autoload -U +X bashcompinit && bashcompinit

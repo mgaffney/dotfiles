@@ -7,23 +7,12 @@
 [include]
 	path = shared
 	path = local
-	path = private
 # [init]
 	# templatedir = ~/.git_template
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-# [rebase]
-	# autosquash = true
-# [branch]
-	# autosetuprebase = always
-# [pull]
-	# rebase = true
 [rerere]
 	enabled = true
-[user]
-	signingkey = A1193A56
-[commit]
-	gpgsign = true
 [diff]
 	colorMoved = zebra
 	noprefix = true
@@ -32,5 +21,18 @@
 
 [init]
 	defaultBranch = main
+
+[user]
+	name = Michael Gaffney
+	email = mike@gaffney.cc
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIERzLb4WHYq+h2izqrpyrZ5jlfhgp0dj870jJj0POt+u
+[github]
+	user = mgaffney
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
 
 # vim: set filetype=gitconfig :
