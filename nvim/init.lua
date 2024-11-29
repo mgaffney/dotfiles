@@ -1098,12 +1098,10 @@ endif
 ]])
     end,
   },
-  "SirVer/ultisnips",
   "aklt/plantuml-syntax",
   "cespare/vim-toml",
   "chrisbra/csv.vim",
   "darfink/vim-plist",
-  -- "davidhalter/jedi-vim",
   "ekalinin/Dockerfile.vim",
   "elzr/vim-json",
   "embear/vim-localvimrc",
