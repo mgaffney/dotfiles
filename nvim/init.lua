@@ -1103,7 +1103,7 @@ endif
   "cespare/vim-toml",
   "chrisbra/csv.vim",
   "darfink/vim-plist",
-  "davidhalter/jedi-vim",
+  -- "davidhalter/jedi-vim",
   "ekalinin/Dockerfile.vim",
   "elzr/vim-json",
   "embear/vim-localvimrc",
