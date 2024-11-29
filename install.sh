@@ -119,11 +119,18 @@ function set_mac_defaults() {
   defaults write com.apple.screencapture disable-shadow -bool true
 }
 
+function install_ohmyzsh() {
+  if ! [[ -d "${HOME}/.oh-my-zsh" ]]; then
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  fi
+}
+
 function main() {
   mkdir -p "${HOME}/.config"
   install_tmux || return
   install_git || return
   install_zsh || return
+  install_ohmyzsh || return
   install_gpg || return
   install_psql || return
   install_dircolors || return
