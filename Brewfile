@@ -45,6 +45,7 @@ brew "srt"
 brew "tesseract"
 brew "ffmpeg"
 brew "findutils"
+brew "fprobe"
 brew "fzf"
 brew "gh"
 brew "git"
@@ -114,6 +115,7 @@ brew "w3m"
 brew "watch"
 brew "wget"
 brew "yarn"
+brew "yt-dlp"
 brew "zsh"
 brew "hashicorp/tap/terraform"
 brew "hashicorp/tap/vault"
@@ -123,10 +125,12 @@ cask "affinity-designer"
 cask "affinity-photo"
 cask "affinity-publisher"
 cask "anki"
+cask "audacity"
 cask "cheatsheet"
 cask "dbeaver-community"
 cask "docker"
 cask "firefox"
+cask "font-libre-franklin"
 cask "font-sauce-code-pro-nerd-font"
 cask "fontbase"
 cask "gitup"
@@ -162,7 +166,6 @@ mas "New Oxford American Dictionary", id: 1066450412
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Prime Video", id: 545519333
-mas "Soulver 2", id: 413965349
 mas "Soulver 3", id: 1508732804
 mas "Synalyze It!", id: 417074533
 mas "Telegram", id: 747648890
