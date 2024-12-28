@@ -356,6 +356,7 @@ require("lazy").setup({
   },
   {
     "tpope/vim-fugitive",
+    lazy = false,
     keys = {
       { "gst",         ":vertical :G<CR>",     { noremap = true, silent = true, desc = "Open [G]it [ST]atus" } },
       { "<leader>gb",  ":G blame<CR>",         { noremap = true, silent = true, desc = "Open [G]it [B]lame" } },
