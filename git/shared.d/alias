@@ -16,7 +16,7 @@
 	# show graph of current branch
 	lgb = !"git lg7b"
 
-    lm  = log --author=\"Michael Gaffney\"
+    lm  = log --author='Michael Gaffney'
 
 	# lg3 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(6)%an%C(reset)%C(1)%d%C(reset)' --all
 	# lg4 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(10)%an%C(reset) %C(7)·%C(reset) %C(1)%d%C(reset)' --all
