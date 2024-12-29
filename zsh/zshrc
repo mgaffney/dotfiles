@@ -71,7 +71,7 @@ function zvm_after_init() {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew autojump extract tmux)
+plugins=(brew extract tmux)
 plugins+=(zsh-vi-mode)
 
 typeset -gU fpath path
