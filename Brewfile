@@ -80,7 +80,7 @@ brew "ssh-copy-id", link: true
 brew "terminal-notifier"
 brew "the_silver_searcher"
 brew "tidy-html5"
-brew "tmux", args: ["HEAD"]
+brew "tmux"
 brew "tree"
 brew "universal-ctags"
 brew "watch"
