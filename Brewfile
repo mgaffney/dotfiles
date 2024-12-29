@@ -108,7 +108,6 @@ brew "tmux", args: ["HEAD"]
 brew "tokei"
 brew "tree"
 brew "universal-ctags"
-brew "w3m"
 brew "watch"
 brew "wget"
 brew "yarn"
