@@ -603,7 +603,7 @@ endif
                 { fname_width = 70 }
               )
             end,
-            "[G]oto [R]eferences")
+            "[G]oto [C]allers")
 
           -- Jump to the implementation of the word under your cursor.
           --  Useful when your language has ways of declaring types without an actual implementation.
