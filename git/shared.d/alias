@@ -8,55 +8,21 @@
 	df = diff
 	dc = diff --cached
 	ls = ls-files
-	# lg1 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
-	## lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
-	# lg2 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
-	lg = !"git lg7"
-
-	# show graph of current branch
-	lgb = !"git lg7b"
 
     lm  = log --author='Michael Gaffney'
 
-	# lg3 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(6)%an%C(reset)%C(1)%d%C(reset)' --all
-	# lg4 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(7)·%C(reset) %C(10)%ar%C(reset) %C(7)·%C(reset) %C(normal)%s%C(reset) %C(7)·%C(reset) %C(10)%an%C(reset) %C(7)·%C(reset) %C(1)%d%C(reset)' --all
+	# show graph of current branch
 
-	# lg5 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1)%d%C(reset)' --all
-	# lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
-	lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
+	lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
 
-	lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(10)%G?%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
-
-	lg7b = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)'
-
-lg1-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)'
-	 lg2a = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(auto)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'
-
-
-    lg1 = !"git lg1-specific --all"
-    lg2 = !"git lg2-specific --all"
-    lg3 = !"git lg3-specific --all"
-
-    lg3-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset) %C(bold cyan)(committed: %cD)%C(reset) %C(auto)%d%C(reset)%n''          %C(white)%s%C(reset)%n''          %C(dim white)- %an <%ae> %C(reset) %C(dim white)(committer: %cn <%ce>)%C(reset)'
-
-	# lg71 = log --graph --abbrev-commit --decorate --date=relative --pretty=tformat:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)' --all
-	# lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %d%C(reset)' --all
-	# lg9 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset)  %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)%n''          %C(12)%s%C(reset)' --all
-
-	## lg8 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(normal)%s%C(reset) %C(dim normal)- %an%C(reset)' --all
-
-	## lg6 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14 0)·%C(reset) %C(10)%ar%C(reset) %C(14 0)·%C(reset) %C(12)%s%C(reset) %C(14 0)·%C(reset) %C(10)%an%C(reset) %C(14 0)·%C(reset) %C(1)%d%C(reset)' --all
-	## lg7 = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(8 0)·%C(reset) %C(10)%ar%C(reset) %C(8 0)·%C(reset) %C(12)%s%C(reset) %C(8 0)·%C(reset) %C(10)%an%C(reset) %C(8 0)·%C(reset) %C(1)%d%C(reset)' --all
-	; lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short
-	## lol = log --graph --decorate --pretty=oneline --abbrev-commit --date=short
-	## lola = log --graph --decorate --pretty=oneline --abbrev-commit --all --date=short
+	lgb = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(3)%h%C(reset) %C(14)·%C(reset) %C(10)%ar%C(reset) %C(14)·%C(reset) %C(12)%s%C(reset) %C(14)·%C(reset) %C(10)%an%C(reset) %C(14)·%C(reset)%C(1) %D%C(reset)'
 
 	# look back - list the last 10 branches I was working on
-	lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
+	# lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 
 	# List commits showing changed files:
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%an]" --decorate --stat
+
 	# List oneline commits showing dates:
 	# lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
 	# List oneline commits showing relative dates:
@@ -69,13 +35,13 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	filelog = log -u
 	fl = log -u
 	flw = log -u --word-diff=color
+
 	# Show modified files in last commit:
 	dl = "!git ll -1"
+
 	# Show a diff of last commit:
 	dlc = diff --cached HEAD^
 
-	# Find a file path in codebase:
-	f = "!git ls-files | grep -i"
 	# Search/grep the entire codebase for a string:
 	grep = grep -Ii
 	# Grep from root folder:
@@ -95,7 +61,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	remotes = remote -v
 	# List all branches
 	branches = branch -a
-	branches2 = for-each-ref --sort=-committerdate --format=\"%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(refname:short)\" refs/remotes
+	branches2 = for-each-ref --sort=-committerdate --format='%(color:blue)%(authordate:relative)\t%(color:red)%(authorname)\t%(color:white)%(refname:short)' refs/remotes
 
     o         = log --graph @{u}..HEAD
     out       = log --graph @{u}..HEAD
@@ -107,9 +73,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
     inll      = log         HEAD..@{u} --decorate --numstat --pretty=format:"%C(yellow)%h\\ %C(reset)%<(72,trunc)%s%C(blue)\\ [%an]%C(red)%d"
 
 	# List local branches and last commit time
-	recent = !"git recent2"
-	recent1 = for-each-ref --sort='-authordate:iso8601' --format='%(authordate:relative)%09%(refname:short)' refs/heads
-	recent2 = branch --sort=-committerdate --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
+	recent = branch --sort=-committerdate --format='%(color:green)%(committerdate:relative)%(color:reset) %(refname:short)'
 
 	# List all tags - reverse sort
 	tags = tag --sort=-version:refname
@@ -117,7 +81,7 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	aliases = "!git config -l | grep alias | cut -c 7-"
 
 	# Show files ignored by git:
-	ign = ls-files -o -i --exclude-standard
+	ls-ignored = ls-files -o -i --exclude-standard
 
 	# Branch summary - show a summary of files changed on the branch
 	# bsum = "!git diff --compact-summary $(git merge-base --fork-point main)"
@@ -147,15 +111,19 @@ lg2-specific = log --graph --abbrev-commit --decorate --format=format:'%C(bold b
 	# Fetch a pull request from GitHub
 	# prc = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; } ; f"
 
-	# move a branch to a new base
-	movebranch = "!f() { \
-		: git checkout ; \
-		git rebase --onto $2 $(git merge-base $1 @); \
-	}; f"
-
 	# From tpope vim-fugitive #2066
 	# https://github.com/tpope/vim-fugitive/discussions/2066#discussioncomment-3864364
-	work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
+	# https://github.com/tpope/vim-fugitive/issues/1619
+
+	work = "!g() { git fetch && git checkout @{upstream} -t -b $@; }; g"
+	# work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
+	# work = !sh -c 'git fetch && git checkout @{upstream} -t -b \"$@\"' _
 	# work = !sh -c 'git fetch && git switch @{upstream} -t -b \"$@\"' _
+
+	# move a branch to a new base
+	# movebranch = "!f() { \
+	# 	: git checkout ; \
+	# 	git rebase --onto $2 $(git merge-base $1 @); \
+	# }; f"
 
 # vim: set filetype=gitconfig :
