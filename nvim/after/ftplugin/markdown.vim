@@ -2,6 +2,10 @@
 " setlocal linebreak
 " setlocal nolist    " list disables linebreak
 
+" Needed for Obsidian plugin to work properly.
+" https://github.com/epwalsh/obsidian.nvim/issues/286
+setlocal conceallevel=2
+
 setlocal tabstop=4
 setlocal shiftwidth=4
 setlocal softtabstop=4
