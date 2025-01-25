@@ -3,46 +3,79 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-	"epwalsh/obsidian.nvim",
-	version = "*", -- recommended, use latest release instead of latest commit
-	lazy = false,
-	ft = "markdown",
-	dependencies = {
-		"nvim-lua/plenary.nvim",
-		"hrsh7th/nvim-cmp",
-		"nvim-telescope/telescope.nvim",
-		"nvim-treesitter/nvim-treesitter",
-	},
-	opts = {
-		workspaces = {
-			{
-				name = "Notes",
-				path = "/Users/mgaffney/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
+	{
+		"epwalsh/obsidian.nvim",
+		name = "obsidian",
+		version = "*", -- recommended, use latest release instead of latest commit
+		lazy = false,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"hrsh7th/nvim-cmp",
+			"nvim-telescope/telescope.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "Notes",
+					path = "/Users/mgaffney/Library/Mobile Documents/iCloud~md~obsidian/Documents/Notes",
+					overrides = {
+						notes_subdir = "notes",
+					},
+				},
 			},
-		},
 
-		templates = {
-			folder = "templates",
-			date_format = "%Y-%m-%d",
-			time_format = "%H:%M",
-			-- A map for custom variables, the key should be the variable and the value a function
-			substitutions = {},
-		},
+			templates = {
+				folder = "templates",
+				date_format = "%Y-%m-%d",
+				time_format = "%H:%M",
+				-- A map for custom variables, the key should be the variable and the value a function
+				substitutions = {},
+			},
 
-		daily_notes = {
-			-- Optional, if you keep daily notes in a separate directory.
-			folder = "daily",
-			-- Optional, if you want to change the date format for the ID of daily notes.
-			date_format = "%Y-%m-%d",
-			-- Optional, if you want to change the date format of the default alias of daily notes.
-			alias_format = "%A %B %-d, %Y",
-			-- Optional, default tags to add to each new daily note created.
-			default_tags = { "daily-notes" },
-			-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-			template = "daily.md"
-		},
+			daily_notes = {
+				-- Optional, if you keep daily notes in a separate directory.
+				folder = "daily",
+				-- Optional, if you want to change the date format for the ID of daily notes.
+				date_format = "%Y-%m-%d",
+				-- Optional, if you want to change the date format of the default alias of daily notes.
+				alias_format = "%A %B %-d, %Y",
+				-- Optional, default tags to add to each new daily note created.
+				default_tags = { "daily-notes" },
+				-- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
+				template = "daily.md"
+			},
 
-	},
+			-- Where to put new notes. Valid options are
+			--  * "current_dir" - put new notes in same directory as the current buffer.
+			--  * "notes_subdir" - put new notes in the default notes subdirectory.
+			new_notes_location = "notes_subdir",
+
+			open_notes_in = "vsplit",
+
+			-- Optional, customize how note IDs are generated given an optional title.
+			---@param title string|?
+			---@return string
+			note_id_func = function(title)
+				-- Create note IDs in a Zettelkasten format with a timestamp and a suffix.
+				-- In this case a note with the title 'My new note' will be given an ID that looks
+				-- like '1657296016-my-new-note', and therefore the file name '1657296016-my-new-note.md'
+				local suffix = ""
+				if title ~= nil then
+					-- If title is given, transform it into valid file name.
+					suffix = title:gsub(" ", "-"):gsub("[^A-Za-z0-9-]", ""):lower()
+				else
+					-- If title is nil, just add 4 random uppercase letters to the suffix.
+					for _ = 1, 4 do
+						suffix = suffix .. string.char(math.random(65, 90))
+					end
+				end
+				return tostring(os.time()) .. "-" .. suffix
+			end,
+
+		},
+	}
 }
 
 --[[
