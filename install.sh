@@ -91,6 +91,10 @@ function install_bat() {
   install "${SCRIPTDIR}/bat" "${HOME}/.config/bat"
 }
 
+function install_gh() {
+  install "${SCRIPTDIR}/gh" "${HOME}/.config/gh"
+}
+
 function install_creds() {
   local -r target="${HOME}/.creds"
   mkdir -p "${target}"
@@ -127,6 +131,7 @@ function main() {
   install_neovim || return
   install_creds || return
   install_bat || return
+  install_gh || return
   install_less || return
   install_wget || return
   set_mac_defaults || return
