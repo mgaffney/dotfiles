@@ -149,6 +149,14 @@ alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/
 
 alias today='date +%Y%m%d'
 
+# icalBuddy - The allowed property names are:
+# 	title, location, notes, attendees, url, datetime, priority.
+#
+# -nc, --noCalendarNames 	Omit calendar names from the output. Does not apply if the -sc argument is used.
+# --noPropNames, --noPropNames 	Omit property names from the output (i.e. only show property values — e.g. My house instead of location: My house).
+alias meetings='icalBuddy --formatOutput --noCalendarNames --includeEventProps "title,datetime,attendees" --propertyOrder "datetime,title,attendees" --dateFormat "%RD" --excludeAllDayEvents --includeCals "mgaffney@hashicorp.com" eventsToday'
+alias meetingsMd='icalBuddy --noPropNames --noCalendarNames --propertySeparators "/: /\\n\\n__Attendees:__ /" --includeEventProps "datetime,title,attendees" --propertyOrder "datetime, title, attendees" --bullet "\n\n### " --excludeAllDayEvents --includeCals "mgaffney@hashicorp.com" eventsToday'
+
 alias timer='recm'
 
 alias chrome='open -a "Google Chrome"'
