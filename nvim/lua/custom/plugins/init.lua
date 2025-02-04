@@ -4,16 +4,69 @@
 -- See the kickstart.nvim README for more information
 return {
 	{
+		"lukas-reineke/headlines.nvim",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		lazy = true,
+		config = function()
+			local bg      = "#103c48"
+			local red     = '#fa5750'
+			local green   = '#75b938'
+			local yellow  = '#dbb32d'
+			local blue    = '#4695f7'
+			local magenta = '#f275be'
+			local cyan    = '#41c7b9'
+			local orange  = '#ed8649'
+			local violet  = '#af88eb'
+
+			vim.api.nvim_set_hl(0, "Headline1", { fg = red, bg = bg })
+			vim.api.nvim_set_hl(0, "Headline2", { fg = green, bg = bg })
+			vim.api.nvim_set_hl(0, "Headline3", { fg = yellow, bg = bg })
+			vim.api.nvim_set_hl(0, "Headline4", { fg = magenta, bg = bg })
+			vim.api.nvim_set_hl(0, "Headline5", { fg = cyan, bg = bg })
+			vim.api.nvim_set_hl(0, "CodeBlock", { bg = bg })
+			vim.api.nvim_set_hl(0, "Dash", { fg = "#D19A66", bold = true })
+
+			require("headlines").setup {
+				markdown = {
+					headline_highlights = { "Headline1", "Headline2", "Headline3" },
+					bullet_highlights = { "Headline1", "Headline2", "Headline3" },
+					bullets = { "❯", "❯❯", "❯❯❯", "❯❯❯❯", "❯❯❯❯❯" },
+					dash_string = "⎯",
+					fat_headlines = false,
+					query = vim.treesitter.query.parse(
+						"markdown",
+						[[
+                (atx_heading [
+                    (atx_h1_marker)
+                    (atx_h2_marker)
+                    (atx_h3_marker)
+                    (atx_h4_marker)
+                    (atx_h5_marker)
+                    (atx_h6_marker)
+                ] @headline)
+
+                (thematic_break) @dash
+
+                (fenced_code_block) @codeblock
+            ]]
+					),
+				},
+			}
+		end,
+	},
+
+	{
 		"epwalsh/obsidian.nvim",
 		name = "obsidian",
 		version = "*", -- recommended, use latest release instead of latest commit
-		lazy = false,
+		lazy = true,
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"hrsh7th/nvim-cmp",
 			"nvim-telescope/telescope.nvim",
 			"nvim-treesitter/nvim-treesitter",
+			"headlines.nvim",
 		},
 		opts = {
 			workspaces = {
