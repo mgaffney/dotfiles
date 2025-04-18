@@ -53,7 +53,7 @@ brew "htop"
 brew "jq"
 brew "lesspipe"
 brew "llvm"
-brew "luajit", args: ["HEAD"]
+brew "luajit"
 brew "luarocks"
 brew "macvim"
 brew "make"
