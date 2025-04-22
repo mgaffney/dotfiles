@@ -55,16 +55,14 @@ return {
 		end,
 	},
 
-	--[[
 	{
-		"epwalsh/obsidian.nvim",
-		name = "obsidian",
+		"obsidian-nvim/obsidian.nvim",
 		version = "*", -- recommended, use latest release instead of latest commit
 		lazy = true,
 		ft = "markdown",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-			"hrsh7th/nvim-cmp",
+			'saghen/blink.cmp',
 			"nvim-telescope/telescope.nvim",
 			"nvim-treesitter/nvim-treesitter",
 			"headlines.nvim",
@@ -130,7 +128,7 @@ return {
 
 		},
 	}
-	--]]
+
 }
 
 --[[
