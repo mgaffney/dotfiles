@@ -240,6 +240,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 au BufWritePre,FileWritePre * if @% !~# '\(://\)' | call mkdir(expand('<afile>:p:h'), 'p') | endif
 
+let g:github_enterprise_urls = ['github.com', 'github.ibm.com']
+
 highlight NonText guifg=#4a4a59 guibg=bg
 highlight SpecialKey guifg=#4a4a59 guibg=bg
 highlight Folded cterm=none gui=none
@@ -333,26 +335,37 @@ require("lazy").setup({
     "junegunn/fzf.vim",
     requires = { "junegunn/fzf" },
     keys = {
-      { "<leader>ff",  ":Files<CR>",     { noremap = true, silent = true, desc = "[f]ind [f]iles" } },
-      { "<leader>fg",  ":GFiles<CR>",    { noremap = true, silent = true, desc = "[f]ind [g]it files" } },
-      { "<leader>fb",  ":Buffers<CR>",   { noremap = true, silent = true, desc = "[f]ind [b]uffers" } },
-      { "<leader>fh",  ":Helptags!<CR>", { noremap = true, silent = true, desc = "[f]ind [h]elp tags" } },
-      { "<leader>fl",  ":Lines<CR>",     { noremap = true, silent = true, desc = "[f]ind [l]ines" } },
-      { "<leader>fs",  ":Rg<CR>",        { noremap = true, silent = true, desc = "[f]ind [s]earch" } },
-      { "<leader>ft",  ":BTags<CR>",     { noremap = true, silent = true, desc = "[f]ind [t]ags" } },
-      { "<leader>fm",  ":Marks<CR>",     { noremap = true, silent = true, desc = "[f]ind [m]arks" } },
-      { "<leader>fH",  ":History<CR>",   { noremap = true, silent = true, desc = "[f]ind [H]istory" } },
-      { "<leader>f:",  ":History:<CR>",  { noremap = true, silent = true, desc = "[f]ind [:]History" } },
-      { "<leader>f/",  ":History/<CR>",  { noremap = true, silent = true, desc = "[f]ind [/]History" } },
-      { "<leader>fm",  ":Maps<CR>",      { noremap = true, silent = true, desc = "[f]ind [m]aps" } },
-      { "<leader>fc",  ":Commands<CR>",  { noremap = true, silent = true, desc = "[f]ind [c]ommands" } },
-      { "<leader>fgc", ":Commits<CR>",   { noremap = true, silent = true, desc = "[f]ind [g]it [c]ommits" } },
+      -- { "<leader>ff",  ":Files<CR>",     { noremap = true, silent = true, desc = "[f]ind [f]iles" } },
+      -- { "<leader>fg",  ":GFiles<CR>",    { noremap = true, silent = true, desc = "[f]ind [g]it files" } },
+      -- { "<leader>fb",  ":Buffers<CR>",   { noremap = true, silent = true, desc = "[f]ind [b]uffers" } },
+      -- { "<leader>fh",  ":Helptags!<CR>", { noremap = true, silent = true, desc = "[f]ind [h]elp tags" } },
+      -- { "<leader>fl",  ":Lines<CR>",     { noremap = true, silent = true, desc = "[f]ind [l]ines" } },
+      -- { "<leader>fs",  ":Rg<CR>",        { noremap = true, silent = true, desc = "[f]ind [s]earch" } },
+      -- { "<leader>ft",  ":BTags<CR>",     { noremap = true, silent = true, desc = "[f]ind [t]ags" } },
+      -- { "<leader>fm",  ":Marks<CR>",     { noremap = true, silent = true, desc = "[f]ind [m]arks" } },
+      { "<leader>fH",  ":History<CR>",  { noremap = true, silent = true, desc = "[f]ind [H]istory" } },
+      -- { "<leader>f:",  ":History:<CR>",  { noremap = true, silent = true, desc = "[f]ind [:]History" } },
+      -- { "<leader>f/",  ":History/<CR>",  { noremap = true, silent = true, desc = "[f]ind [/]History" } },
+      -- { "<leader>fm",  ":Maps<CR>",      { noremap = true, silent = true, desc = "[f]ind [m]aps" } },
+      -- { "<leader>fc",  ":Commands<CR>",  { noremap = true, silent = true, desc = "[f]ind [c]ommands" } },
+      { "<leader>fgc", ":Commits<CR>",  { noremap = true, silent = true, desc = "[f]ind [g]it [c]ommits" } },
+      { "<leader>fgb", ":BCommits<CR>", { noremap = true, silent = true, desc = "[f]ind [g]it [b]uffer commits" } },
       -- { "<leader>fw", ":Windows<CR>", { noremap = true, silent = true, desc = "[W]indows" } },
       -- { "<leader>fq", ":Quickfix<CR>", { noremap = true, silent = true, desc = "[Q]uickfix" } },
       -- { "<leader>fl", ":Locate<CR>", { noremap = true, silent = true, desc = "[L]ocate" } },
       -- { "<leader>fd", ":BDelete<CR>", { noremap = true, silent = true, desc = "[D]elete buffer" } },
       -- { "<leader>fo", ":FZF<CR>", { noremap = true, silent = true, desc = "[O]pen FZF" } },
     },
+    --     config = function()
+    --       vim.cmd([[
+    -- if !exists('g:fzf_vim')
+    --   let g:fzf_vim = {}
+    -- endif
+    -- let g:fzf_vim.commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(reset)· %C(cyan)%cr %C(reset)· %C(reset)%C(yellow)%an%C(reset)"'
+    --
+    -- ]])
+    --     end,
+
   },
   {
     "tpope/vim-fugitive",
@@ -480,16 +493,33 @@ endif
 
       -- See `:help telescope.builtin`
       local builtin = require("telescope.builtin")
-      vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "[S]earch [H]elp" })
-      vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
-      vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "[S]earch [F]iles" })
-      vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+      vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
+      vim.keymap.set("n", "<leader>fm", builtin.keymaps, { desc = "[F]ind key[M]aps" })
+      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
+      vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
+      vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
+      vim.keymap.set("n", "<leader>f:", builtin.command_history, { desc = "[F]ind [:]history" })
+      vim.keymap.set("n", "<leader>f/", builtin.search_history, { desc = "[F]ind [/]history" })
+
+      vim.keymap.set("n", "<leader>fgf", builtin.git_files, { desc = "[F]ind [G]it [F]iles" })
+      vim.keymap.set("n", "<leader>sgc", builtin.git_commits, { desc = "[F]ind [G]it [C]ommits" })
+      vim.keymap.set("n", "<leader>sgb", builtin.git_bcommits, { desc = "[F]ind [G]it [B]commits" })
+
+      --  See `:help telescope.builtin.live_grep()` for information about particular keys
+      vim.keymap.set("n", "<leader>fl", function()
+        builtin.live_grep({
+          grep_open_files = true,
+          prompt_title = "find string in open buffers",
+        })
+      end, { desc = "[f]ind [l]ines in open buffers" })
+
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
-      vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "[S]earch by [G]rep" })
+      vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
       vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
       vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
-      vim.keymap.set("n", "<leader><leader>", builtin.buffers, { desc = "[ ] Find existing buffers" })
+
+      -- vim.keymap.set("n", "<leader>sv", builtin.buffers,       { desc = "[ ] Find existing buffers" })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set("n", "<leader>sb", function()
@@ -887,7 +917,7 @@ endif
       -- Snippet Engine & its associated nvim-cmp source
       {
         "L3MON4D3/LuaSnip",
-        version = '2.*',
+        version = 'v2.*',
         build = (function()
           -- Build Step is needed for regex support in snippets.
           -- This step is not supported in many windows environments.
@@ -1195,7 +1225,7 @@ set grepprg=internal
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require("kickstart.plugins.neo-tree"),
+  require("kickstart.plugins.neo-tree"),
   require("kickstart.plugins.gitsigns"), -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`

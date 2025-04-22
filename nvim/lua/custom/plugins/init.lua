@@ -55,6 +55,7 @@ return {
 		end,
 	},
 
+	--[[
 	{
 		"epwalsh/obsidian.nvim",
 		name = "obsidian",
@@ -129,6 +130,7 @@ return {
 
 		},
 	}
+	--]]
 }
 
 --[[
