@@ -495,7 +495,6 @@ endif
       local builtin = require("telescope.builtin")
       vim.keymap.set("n", "<leader>fh", builtin.help_tags, { desc = "[F]ind [H]elp" })
       vim.keymap.set("n", "<leader>fm", builtin.keymaps, { desc = "[F]ind key[M]aps" })
-      vim.keymap.set("n", "<leader>ff", builtin.find_files, { desc = "[F]ind [F]iles" })
       vim.keymap.set("n", "<leader>fc", builtin.commands, { desc = "[F]ind [C]ommands" })
       vim.keymap.set("n", "<leader>fb", builtin.buffers, { desc = "[F]ind [B]uffers" })
       vim.keymap.set("n", "<leader>f:", builtin.command_history, { desc = "[F]ind [:]history" })
@@ -512,6 +511,12 @@ endif
           prompt_title = "find string in open buffers",
         })
       end, { desc = "[f]ind [l]ines in open buffers" })
+
+      vim.keymap.set("n", "<leader>ff", function()
+        builtin.find_files({
+          no_ignore = true,
+        })
+      end, { desc = "[F]ind [F]iles" })
 
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch current [W]ord" })
       vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
