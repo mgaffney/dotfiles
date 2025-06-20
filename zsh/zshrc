@@ -204,3 +204,8 @@ fi
 complete -o nospace -C boundary boundary
 # zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")
 # vim: set filetype=zsh:
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/mgaffney/.lmstudio/bin"
+# End of LM Studio CLI section
+
