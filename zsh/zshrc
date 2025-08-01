@@ -176,6 +176,8 @@ autoload -U +X bashcompinit && bashcompinit
 
 # Keep previous versions of homebrew formulas around
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+# Don't update homebrew automatically
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Use vim as a MANPAGER
 # export MANPAGER="vim -c MANPAGER -"
