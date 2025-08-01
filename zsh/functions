@@ -176,7 +176,7 @@ function sqlup() {
 }
 
 function fvim () {
-        lsof -c '/vim/i' -a -d cwd | cut -w -f1,9 | awk 'NR<2{print $0;next}{print $0| "sort -u"}'
+  lsof -c '/vim/i' -a -d cwd | cut -w -f1,9- | awk 'NR<2{print $0;next}{print $0| "sort -u"}'
 }
 
 ghcs() {
