@@ -68,6 +68,7 @@ return {
 			"headlines.nvim",
 		},
 		opts = {
+			legacy_commands = false,
 			workspaces = {
 				{
 					name = "Notes",
