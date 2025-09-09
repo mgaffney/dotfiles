@@ -199,6 +199,13 @@ eval "$(jira --completion-script-zsh)"
 # (default: unset):
 # export VI_MODE_SET_CURSOR=true
 
+# Configure help command for zsh
+# https://superuser.com/a/1563859
+unalias run-help
+autoload run-help
+export HELPDIR=$(command brew --prefix)/share/zsh/help
+alias help=run-help
+
 if [[ "$ZPROF" = true ]]; then
   zprof
 fi
