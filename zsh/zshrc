@@ -213,3 +213,8 @@ fi
 complete -o nospace -C boundary boundary
 # zvm_after_init_commands+=("bindkey '^[[A' up-line-or-search" "bindkey '^[[B' down-line-or-search")
 # vim: set filetype=zsh:
+
+if [[ -d "$HOME/.lmstudio/bin" ]]; then
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+fi
+
