@@ -152,6 +152,7 @@ export GOBIN=$GOPATH/bin
 
 path=(
 	$HOME/bin
+	$HOME/.local/bin
 	$HOME/.cargo/bin
 	/usr/local/bin
   $GOBIN
@@ -217,4 +218,3 @@ complete -o nospace -C boundary boundary
 if [[ -d "$HOME/.lmstudio/bin" ]]; then
   export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
-
