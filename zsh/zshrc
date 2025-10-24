@@ -218,3 +218,5 @@ complete -o nospace -C boundary boundary
 if [[ -d "$HOME/.lmstudio/bin" ]]; then
   export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
+
+source /Users/mgaffney/.config/broot/launcher/bash/br
