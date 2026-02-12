@@ -11,6 +11,8 @@
 	# templatedir = ~/.git_template
 [url "ssh://git@github.com/"]
     insteadOf = https://github.com/
+[url "ssh://git@github.ibm.com/"]
+    insteadOf = https://github.ibm.com/
 [rerere]
 	enabled = true
 [diff]
