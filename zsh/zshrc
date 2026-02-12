@@ -180,8 +180,8 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # Don't update homebrew automatically
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Use vim as a MANPAGER
-# export MANPAGER="vim -c MANPAGER -"
+# Use neovim as a MANPAGER
+export MANPAGER='nvim +Man!'
 
 [ -f $DOTS/zsh/privaterc ] && source $DOTS/zsh/privaterc
 
