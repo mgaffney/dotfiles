@@ -189,6 +189,15 @@ export MANPAGER='nvim +Man!'
 complete -o nospace -C vault vault
 
 eval "$(jira --completion-script-zsh)"
+
+if (( $+commands[doormat] )); then
+  if [[ ! -e "${fpath[1]}/_doormat" || $(command -v doormat) -nt "${fpath[1]}/_doormat" ]]; then
+    echo "doormat completion does not exist, generating..."
+    doormat completion zsh > "${fpath[1]}/_doormat"
+  fi
+  plugins+=(doormat)
+fi
+
 # vi mode
 # source $DOTS/zsh/vim-mode-rc
 

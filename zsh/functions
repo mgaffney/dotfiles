@@ -320,3 +320,21 @@ ghce() {
 function get_cert() {
   openssl s_client -connect ${1:?server address required}:${2:-443}  < /dev/null 2>/dev/null | openssl x509 -noout -text
 }
+
+# Make sure doormat is running
+# doormat login -f && doormat cred-server
+claude-aws() {
+  local process_name="doormat"
+  if ! pgrep -x "$process_name" > /dev/null; then
+    tmux new-session -As doormat -d "doormat login -f && doormat cred-server"
+  fi
+  ANTHROPIC_MODEL="global.anthropic.claude-sonnet-4-5-20250929-v1:0" \
+  ANTHROPIC_DEFAULT_HAIKU_MODEL="global.anthropic.claude-haiku-4-5-20251001-v1:0" \
+  AWS_PROFILE=${AWS_PROFILE:-sandbox_bedrock} \
+  CLAUDE_CODE_USE_BEDROCK=1 \
+  DISABLE_PROMPT_CACHING=0 \
+  CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1 \
+  CLAUDE_CODE_MAX_OUTPUT_TOKENS=${CLAUDE_CODE_MAX_OUTPUT_TOKENS:-4096} \
+  MAX_THINKING_TOKENS=${MAX_THINKING_TOKENS:-1024} \
+  command claude "${@}"
+}
