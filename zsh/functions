@@ -59,7 +59,7 @@ function recm() {
   dt=$(date +%Y%m%d)
   local -r outdir="${HOME}/Documents/notes/daily-notes/audio"
   mkdir -p "${outdir}"
-  sox -q -d "${outdir}/${fn}-${dt}.mp3"
+  ffmpeg -f avfoundation -i ":0" "${outdir}/${fn}-${dt}.m4a"
 }
 
 
