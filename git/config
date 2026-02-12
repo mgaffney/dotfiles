@@ -21,7 +21,8 @@
 
 [init]
 	defaultBranch = main
-
+[merge]
+	tool = nvimdiff
 [user]
 	name = Michael Gaffney
 	email = mike@gaffney.cc
