@@ -9,10 +9,12 @@
 	path = local
 # [init]
 	# templatedir = ~/.git_template
-[url "ssh://git@github.com/"]
-    insteadOf = https://github.com/
-[url "ssh://git@github.ibm.com/"]
-    insteadOf = https://github.ibm.com/
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+	insteadOf = ssh://git@github.com/
+[url "git@github.ibm.com:"]
+	insteadOf = https://github.ibm.com/
+	insteadOf = ssh://git@github.ibm.com/
 [rerere]
 	enabled = true
 [diff]
