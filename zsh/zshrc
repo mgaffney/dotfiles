@@ -142,8 +142,10 @@ export PAGER MANPAGER
 source $DOTS/zsh/aliases
 source $DOTS/zsh/functions
 source $HOME/.creds/homebrew
+[ -f $HOME/.creds/bob ] && source $HOME/.creds/bob
 [ -f $HOME/.creds/circleci ] && source $HOME/.creds/circleci
 [ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
+[ -f $HOME/.creds/github ] && source $HOME/.creds/github
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
