@@ -286,6 +286,9 @@ local_settings.py
 db.sqlite3
 db.sqlite3-journal
 
+# psql
+.sqlhistory
+
 # Flask stuff:
 instance/
 .webassets-cache
