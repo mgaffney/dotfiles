@@ -83,6 +83,10 @@ function install_dircolors {
   install "${target}/dircolors.ansi-universal" "${HOME}/.dircolors"
 }
 
+function install_ghostty() {
+  install "${SCRIPTDIR}/ghostty" "${HOME}/.config/ghostty"
+}
+
 function install_neovim() {
   install "${SCRIPTDIR}/nvim" "${HOME}/.config/nvim"
 }
@@ -129,6 +133,7 @@ function main() {
   install_psql || return
   install_dircolors || return
   install_neovim || return
+  install_ghostty || return
   install_creds || return
   install_bat || return
   install_gh || return
