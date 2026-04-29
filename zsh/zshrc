@@ -1,6 +1,10 @@
+# ZPROF=true
 if [[ "$ZPROF" = true ]]; then
   zmodload zsh/zprof
 fi
+
+zstyle ':omz:update' mode disabled
+ZSH_DISABLE_COMPFIX=true
 
 export PATH=/opt/homebrew/bin:$PATH
 
@@ -71,7 +75,8 @@ function zvm_after_init() {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(brew extract tmux)
+# plugins=(brew extract tmux)
+plugins=(tmux)
 plugins+=(zsh-vi-mode)
 
 typeset -gU fpath path
