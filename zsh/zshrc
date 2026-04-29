@@ -167,6 +167,7 @@ path=(
 	/usr/{bin,sbin}
 	/{bin,sbin}
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
+  "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 )
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
