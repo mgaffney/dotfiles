@@ -1,3 +1,6 @@
 font-family = SauceCodePro Nerd Font Mono
+# font-family-bold = SauceCodePro Nerd Font Mono Black
+font-thicken = true
+font-thicken-strength = 255
 theme = Selenized Dark
 macos-option-as-alt = true
