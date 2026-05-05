@@ -168,6 +168,7 @@ path=(
 	/{bin,sbin}
 	/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support
   "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  /Applications/Ghostty.app/Contents/MacOS
 )
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
