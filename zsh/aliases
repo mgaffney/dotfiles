@@ -54,7 +54,7 @@ alias mnetstat='sudo lsof -i -P'
 alias mnetstat-listen='sudo lsof -iTCP -sTCP:LISTEN -P -n'
 
 alias cdcopy='pwd | pbcopy'
-alias cdpaste='cd `pbpaste`'
+alias cdpaste='cd "`pbpaste`"'
 
 #find sql files but ignore test files and files under .svn directory
 alias findsql="find . -not \( -regex '.*/test/.*' -o -regex '.*/test' -o -regex '.*/.svn/.*' -o -regex '.*/.svn' \) -name '*.sql'"
