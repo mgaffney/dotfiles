@@ -431,4 +431,6 @@ Sessionx.vim
 # Persistent undo
 [._]*.un~
 
+.ripgreprc
+
 # End of https://www.gitignore.io/api/go,vim,git,gpg,tags,macos,python,dropbox,vagrant,terraform,jetbrains+all
