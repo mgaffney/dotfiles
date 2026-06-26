@@ -16,10 +16,17 @@ xcode-select --install
 eval "$(/opt/homebrew/bin/brew shellenv)"
 ```
 
-3. Clone dots repo
+3. Clone dots repo (with submodules)
 
 ```bash
-git clone https://github.com/mgaffney/dotfiles.git
+git clone --recurse-submodules https://github.com/mgaffney/dotfiles.git
+```
+
+If you already cloned without `--recurse-submodules`, pull them in:
+
+```bash
+cd dotfiles
+git submodule update --init --recursive
 ```
 
 4. Install Brewfile
