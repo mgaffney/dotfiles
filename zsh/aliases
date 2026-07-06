@@ -178,3 +178,5 @@ alias ghprco='gh pr checkout'
 alias kick-icloud="sudo renice -n -10 -p $(pgrep bird)"
 
 alias ttyupmax='sudo sysctl kern.tty.ptmx_max=999'
+
+alias copilot_spend='opencode stats --days $(date "+%d") | grep -i cost'
