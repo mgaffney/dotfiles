@@ -424,6 +424,8 @@ Session.vim
 Sessionx.vim
 *.Session.vim
 
+.nvim.lua
+
 # Temporary
 .netrwhist
 *~
