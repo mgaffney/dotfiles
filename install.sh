@@ -143,8 +143,8 @@ function main() {
   install_gh || return
   install_less || return
   install_wget || return
-  set_mac_defaults || return
   install_opencode || return
+  set_mac_defaults || return
 }
 
 main "$@"
