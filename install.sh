@@ -99,6 +99,10 @@ function install_gh() {
   install "${SCRIPTDIR}/gh" "${HOME}/.config/gh"
 }
 
+function install_opencode() {
+  install "${SCRIPTDIR}/opencode" "${HOME}/.config/opencode"
+}
+
 function install_creds() {
   local -r target="${HOME}/.creds"
   mkdir -p "${target}"
@@ -140,6 +144,7 @@ function main() {
   install_less || return
   install_wget || return
   set_mac_defaults || return
+  install_opencode || return
 }
 
 main "$@"
