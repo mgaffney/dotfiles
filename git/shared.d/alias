@@ -8,8 +8,10 @@
 	df = diff
 	dc = diff --cached
 	ls = ls-files
-
     lm  = log --author='Michael Gaffney'
+
+    unstage   = reset HEAD --
+    uncommit  = reset --soft 'HEAD^'
 
 	# show graph of current branch
 
