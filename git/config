@@ -3,7 +3,8 @@
 	autocrlf = input
 	pager = less -F -X
 [push]
-	default = current
+	default = upstream
+	autoSetupRemote = true
 [include]
 	path = shared
 	path = local
