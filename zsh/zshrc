@@ -135,7 +135,7 @@ autoload -U zmv
 export VAGRANT_DEFAULT_PROVIDER='virtualbox'
 
 # Editor and Pager
-EDITOR="vim"
+EDITOR="nvim"
 export EDITOR
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
@@ -238,6 +238,9 @@ if [[ -s "/opt/homebrew/opt/nvm/nvm.sh" ]]; then
     source "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion\/
   fi
 fi
+
+export PSQL_EDITOR='nvim'
+export PSQL_EDITOR_LINENUMBER_ARG='+'
 
 # vi mode
 # source $DOTS/zsh/vim-mode-rc
