@@ -8,7 +8,10 @@
 	df = diff
 	dc = diff --cached
 	ls = ls-files
-    lm  = log --author='Michael Gaffney'
+
+    lm    = log --author='Michael Gaffney'
+    logme = log --author='Michael Gaffney'
+    mylog = log --author='Michael Gaffney'
 
     unstage   = reset HEAD --
     uncommit  = reset --soft 'HEAD^'
