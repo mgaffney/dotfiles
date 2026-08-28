@@ -183,6 +183,7 @@
 \timing on
 
 set intervalstyle to 'postgres_verbose';
+set timezone to 'UTC';
 
 \setenv LESS '-iMFXSx4R'
 
