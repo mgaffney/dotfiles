@@ -18,8 +18,6 @@
 	insteadOf = ssh://git@github.ibm.com/
 [rerere]
 	enabled = true
-[rebase]
-	updateRefs = true
 [diff]
 	colorMoved = zebra
 	noprefix = true
