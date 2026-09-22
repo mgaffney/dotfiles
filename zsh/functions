@@ -349,3 +349,8 @@ function fzgit() {
                --preview="echo {} | sed 's/ *|.*//' | xargs -I% git show --color=always $commit -- %" \
                --preview-window=right:60%
 }
+
+# gtc: Run Go tests with coverage and display the results in a browser.
+function gtc () {
+    go test -cover -coverprofile=.coverage "$@" && go tool cover -html=.coverage && rm -f .coverage
+}
