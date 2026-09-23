@@ -240,6 +240,8 @@ if [[ -s "/opt/homebrew/opt/nvm/nvm.sh" ]]; then
   fi
 fi
 
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 export PSQL_EDITOR='nvim'
 export PSQL_EDITOR_LINENUMBER_ARG='+'
 
@@ -272,5 +274,4 @@ complete -o nospace -C boundary boundary
 if [[ -d "$HOME/.lmstudio/bin" ]]; then
   export PATH="$PATH:$HOME/.lmstudio/bin"
 fi
-
 source /Users/mgaffney/.config/broot/launcher/bash/br
