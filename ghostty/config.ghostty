@@ -1,14 +1,18 @@
+# typography
 font-family = SauceCodePro Nerd Font Mono
 font-size = 13
-# font-family-bold = SauceCodePro Nerd Font Mono Black
 font-thicken = true
 font-thicken-strength = 1
 adjust-cell-height = 1
+
+# aesthetics
 theme = Selenized Dark
+macos-icon = glass
+
+# integration
 macos-option-as-alt = true
-scrollback-limit = 100000000
 shell-integration = zsh
 shell-integration-features = sudo, no-title
-macos-icon = glass
-# macos-icon = xray
-# font-feature=+liga
+
+# other
+scrollback-limit = 100000000
