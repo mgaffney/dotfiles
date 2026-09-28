@@ -153,6 +153,7 @@ source $HOME/.creds/homebrew
 [ -f $HOME/.creds/circleci ] && source $HOME/.creds/circleci
 [ -f $HOME/.creds/artifactory ] && source $HOME/.creds/artifactory
 [ -f $HOME/.creds/github ] && source $HOME/.creds/github
+[ -f $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh ] && source $HOMEBREW_PREFIX/share/forgit/forgit.plugin.zsh
 
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
