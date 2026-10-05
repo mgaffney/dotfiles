@@ -9,3 +9,4 @@ opencode/.gitignore
 opencode/agent/
 opencode/command/
 opencode/ddd-collaboration.md
+/opencode/service.json
