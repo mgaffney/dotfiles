@@ -1,3 +1,4 @@
+# vim: set filetype=gitconfig :
 [core]
 	quotepath = false
 	autocrlf = input
@@ -40,5 +41,7 @@
 	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
 [commit]
 	gpgsign = true
-
-# vim: set filetype=gitconfig :
+[log]
+	mailmap = true
+[mailmap]
+	file = "~/.config/git/.mailmap"
