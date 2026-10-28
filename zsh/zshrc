@@ -58,7 +58,7 @@ ZSH_CUSTOM=$DOTS/oh-my-zsh
 
 # use ripgrep with fzf
 export FZF_BASE='/opt/homebrew/opt/fzf'
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 function zvm_after_init() {
   # Set up fzf key bindings and fuzzy completion
