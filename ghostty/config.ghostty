@@ -14,5 +14,9 @@ macos-option-as-alt = true
 shell-integration = zsh
 shell-integration-features = sudo, no-title
 
+# clipboard
+copy-on-select = both
+middle-click-action = clipboard-paste
+
 # other
 scrollback-limit = 100000000
