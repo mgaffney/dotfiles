@@ -1,0 +1,389 @@
+tap "anomalyco/tap", trusted: { formulae: ["opencode"] }
+tap "atlassian/acli", trusted: true
+tap "basicmachines-co/basic-memory", trusted: true
+tap "hashicorp/security", "git@github.com:hashicorp/homebrew-security.git", trusted: true
+tap "hashicorp/tap", trusted: true
+tap "homebrew/cask"
+tap "homebrew/core"
+tap "teamookla/speedtest", trusted: true
+tap "vjeantet/tap"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Get/set bluetooth power and discoverable state
+brew "blueutil"
+# New way to see and navigate directory trees
+brew "broot"
+# Core application library for C
+brew "glib"
+# X.Org: Core X11 protocol client library
+brew "libx11"
+# X.Org: Library for common extensions to the X11 protocol
+brew "libxext"
+# X.Org: Library for the Render Extension to the X11 protocol
+brew "libxrender"
+# C parser in Python
+brew "pycparser"
+# JPEG image codec that aids compression and decompression
+brew "jpeg-turbo"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# OpenType text shaping engine
+brew "harfbuzz"
+# Framework for layout and rendering of i18n text
+brew "pango"
+# Library to render SVG files using Cairo
+brew "librsvg"
+# Versatile and fast Unicode/ASCII/ANSI graphics renderer
+brew "chafa"
+# Create and view interactive cheat sheets for *nix commands
+brew "cheat"
+# Official command-line tool for CircleCI
+brew "circleci"
+# Statistics utility to count lines of code
+brew "cloc"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Cryptographic recipes and primitives for Python
+brew "cryptography"
+# Suite of command-line tools for converting to and working with CSV
+brew "csvkit"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Tool to perform numerical, textual & statistical operations
+brew "datamash"
+# File comparison utilities
+brew "diffutils"
+# Load/unload environment variables based on $PWD
+brew "direnv"
+# Isolated development environments using Docker
+brew "docker-compose"
+# Convert text between DOS, UNIX, and Mac formats
+brew "dos2unix"
+# Disk Usage/Free Utility - a better 'df' alternative
+brew "duf"
+# More intuitive version of du in rust
+brew "dust"
+# Modern, maintained replacement for ls
+brew "eza"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# Interactive git commands in the terminal
+brew "forgit"
+# GitHub command-line tool
+brew "gh"
+# Distributed revision control system
+brew "git"
+# Small git utilities
+brew "git-extras"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Fast linters runner for Go
+brew "golangci-lint"
+# Multi-threaded malloc() and performance analysis tools
+brew "gperftools"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# GNU grep, egrep and fgrep
+brew "grep"
+# Like cURL, but for gRPC
+brew "grpcurl"
+# Advanced HTML-to-text converter
+brew "html2text"
+# Improved top (interactive process viewer)
+brew "htop"
+# Get events and tasks from the macOS calendar database
+brew "ical-buddy"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Input filter for the pager less
+brew "lesspipe"
+# Blu-Ray disc playback library for media players like VLC
+brew "libbluray"
+# Next-gen compiler infrastructure
+brew "llvm"
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew "luajit"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Text-based web browser
+brew "lynx"
+# GUI for vim, made for macOS
+brew "macvim"
+# Utility for directing compilation
+brew "make"
+# Language Server Protocol for Markdown
+brew "marksman"
+# Mac App Store command-line interface
+brew "mas"
+# Simple tool to make locally trusted development certificates
+brew "mkcert"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
+# 'traceroute' and 'ping' in a single tool
+brew "mtr"
+# NCurses Disk Usage
+brew "ncdu"
+# Robust (fully ACID) transactional property graph database
+brew "neo4j"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", pin: true
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Manage multiple Node.js versions
+brew "nvm"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# AI coding agent, built for the terminal
+brew "opencode"
+# Development kit for the Java programming language
+brew "openjdk"
+# Collection of macOS command-line utilities
+brew "osxutils"
+# PAM module for reattaching to the user's GUI (Aqua) session
+brew "pam-reattach"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Draw UML diagrams
+brew "plantuml"
+# Paste PNG into files
+brew "pngpaste"
+# Tool for managing OCI containers and pods
+brew "podman"
+# Alternative to docker-compose using podman
+brew "podman-compose"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
+# Object-relational database system
+# brew "postgresql@16"
+# Object-relational database system
+brew "postgresql@18", link: true
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
+# Show ps output as a tree
+brew "pstree"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Reattach process (e.g., tmux) to background
+brew "reattach-to-user-namespace"
+# Safe, concurrent, practical language
+brew "rust"
+# Experimental Rust compiler front-end for IDEs
+brew "rust-analyzer"
+# Fast and accurate code counter with complexity and COCOMO estimates
+brew "scc"
+# Count lines of code in many languages
+brew "sloccount"
+# Displays the differences between SQLite databases
+brew "sqldiff"
+# Secure Reliable Transport
+brew "srt"
+# Add a public key to a remote machine's authorized_keys file
+brew "ssh-copy-id", link: true
+# Send macOS User Notifications from the command-line
+brew "terminal-notifier"
+# OCR (Optical Character Recognition) engine
+brew "tesseract"
+# Official documentation format of the GNU project
+brew "texinfo"
+# Code-search similar to ack
+brew "the_silver_searcher"
+# Granddaddy of HTML tools, with support for modern standards
+brew "tidy-html5"
+# Terminal multiplexer
+brew "tmux", pin: true
+# Program that allows you to count code, quickly
+brew "tokei"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Parser generator tool
+brew "tree-sitter-cli"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# Maintained ctags implementation
+brew "universal-ctags"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Internet file retriever
+brew "wget"
+# JavaScript package manager
+brew "yarn"
+# UNIX shell (command interpreter)
+brew "zsh"
+# Software to interact with Atlassian Cloud from the terminal
+brew "atlassian/acli/acli"
+# Doormat CLI -- Command Line Interface to the Doormat Service
+brew "hashicorp/security/doormat-cli"
+# Terraform
+brew "hashicorp/tap/terraform"
+# Vault
+brew "hashicorp/tap/vault"
+# Ookla Speedtest
+brew "teamookla/speedtest/speedtest"
+# macOS notification CLI — send native notifications and capture user interactions
+brew "vjeantet/tap/alerter", trusted: true
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
+# Memory training application
+cask "anki"
+# Anthropic's official Claude AI desktop app
+cask "claude"
+# Terminal-based AI coding assistant
+cask "claude-code"
+# Brings the power of Copilot coding agent directly to your terminal
+cask "copilot-cli"
+# Universal database tool and SQL client
+cask "dbeaver-community"
+cask "font-dejavu"
+cask "font-noto-sans"
+cask "font-sauce-code-pro-nerd-font"
+# Font manager
+cask "fontbase"
+# Gantt chart and project management application
+# cask "ganttproject"
+# Terminal emulator that uses platform-native UI and GPU acceleration
+cask "ghostty"
+# Git interface focused on visual interaction
+cask "gitup-app"
+# Command-line API client
+cask "ibm-cloud-cli"
+# Markdown editor with live preview and syntax highlighting
+cask "macdown-3000"
+# Knowledge base that works on top of a local folder of plain text Markdown files
+cask "obsidian"
+# AI coding agent desktop client
+cask "opencode-desktop"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
+# Browse, manage, inspect containers and images
+cask "podman-desktop"
+# Disk space analyzer
+cask "radix"
+# Collect, organise, cite, and share research sources
+cask "zotero"
+mas "1Password for Safari", id: 1569813296
+mas "AdBlock", id: 1402042596
+mas "Base", id: 402383384
+mas "Base 2", id: 6744867438
+mas "Chambers Thesaurus", id: 498829958
+mas "Cicero", id: 1480977453
+mas "Diagrams", id: 1276248849
+mas "Evernote Web Clipper", id: 1481669779
+mas "Fantastical", id: 975937182
+mas "Gapplin", id: 768053424
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Kindle", id: 302584613
+mas "Marked 2", id: 890031187
+mas "MeetingBar", id: 1532419400
+mas "MindNode Classic", id: 1289197285
+mas "Moom Classic", id: 419330170
+mas "New Oxford American Dictionary", id: 1066450412
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Prime Video", id: 545519333
+mas "Soulver", id: 1508732804
+mas "Soulver 2", id: 413965349
+mas "Synalyze It!", id: 417074533
+mas "Telegram", id: 747648890
+mas "The Unarchiver", id: 425424353
+mas "Typeface", id: 1062679359
+mas "Ultra Character Map", id: 520265986
+mas "WiFi Explorer", id: 494803304
+mas "Windows App", id: 1295203466
+mas "Xcode", id: 497799835
+vscode "bierner.github-markdown-preview"
+vscode "bierner.markdown-checkbox"
+vscode "bierner.markdown-emoji"
+vscode "bierner.markdown-footnotes"
+vscode "bierner.markdown-mermaid"
+vscode "bierner.markdown-preview-github-styles"
+vscode "bierner.markdown-yaml-preamble"
+vscode "github.vscode-pull-request-github"
+vscode "golang.go"
+vscode "ms-azuretools.vscode-containers"
+vscode "ms-vscode-remote.remote-containers"
+vscode "testany.office-to-markdown"
+go "github.com/klauspost/asmfmt/cmd/asmfmt"
+go "github.com/bufbuild/buf/cmd/buf"
+go "golang.org/x/tools/cmd/callgraph"
+go "github.com/hashicorp/copywrite"
+go "golang.org/x/tools/cmd/deadcode"
+go "github.com/go-delve/delve/cmd/dlv"
+go "github.com/kisielk/errcheck"
+go "github.com/davidrjenni/reftools/cmd/fillstruct"
+go "github.com/davidrjenni/reftools/cmd/fillswitch"
+go "github.com/onsi/ginkgo/v2/ginkgo"
+go "github.com/abice/go-enum"
+go "github.com/oligot/go-mod-upgrade"
+go "github.com/rogpeppe/godef"
+go "github.com/kisielk/godepgraph"
+go "golang.org/x/tools/cmd/godoc"
+go "mvdan.cc/gofumpt"
+go "github.com/yqylovy/goimportdot"
+go "golang.org/x/tools/cmd/goimports"
+go "github.com/twpayne/go-jsonstruct/v3/cmd/gojsonstruct"
+go "github.com/golangci/golangci-lint/v2/cmd/golangci-lint"
+go "github.com/segmentio/golines"
+go "github.com/fatih/gomodifytags"
+go "github.com/abenz1267/gomvp"
+go "golang.org/x/tools/cmd/gomvpkg"
+go "golang.org/x/tools/cmd/gonew"
+go "golang.org/x/tools/gopls"
+go "golang.org/x/tools/cmd/gorename"
+go "github.com/jstemmer/gotags"
+go "github.com/cweill/gotests/gotests"
+go "gotest.tools/gotestsum"
+go "golang.org/x/vuln/cmd/govulncheck"
+go "github.com/koron/iferr"
+go "github.com/josharian/impl"
+go "github.com/tmc/json-to-struct"
+go "loccount"
+go "go.uber.org/mock/mockgen"
+go "github.com/fatih/motion"
+go "golang.org/x/pkgsite/cmd/pkgsite"
+go "golang.org/x/pkgsite/cmd/internal/pkgsite-cli"
+go "google.golang.org/protobuf/cmd/protoc-gen-go"
+go "google.golang.org/grpc/cmd/protoc-gen-go-grpc"
+go "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-grpc-gateway"
+go "github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2"
+go "github.com/favadi/protoc-go-inject-tag"
+go "github.com/mgechev/revive"
+go "github.com/kyoh86/richgo"
+go "github.com/dimitri/sqlfmt/cmd/sqlfmt"
+go "honnef.co/go/tools/cmd/staticcheck"
+go "github.com/mfridman/tparse"
+cargo "dbmcp"
+# uv "docuchango"
+# uv "sembr"
+# npm "@bytebase/dbhub"
+npm "@github/copilot-language-server"
+# npm "bobshell"
+# npm "ibmers"
+npm "pg"
+npm "typescript-language-server"
+npm "typescript"
